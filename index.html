@@ -213,7 +213,9 @@
  #arc .sec-head h2{color:var(--ink2)}
  #arc .sec-head p{color:#5a6570}
  .brief-lead{max-width:680px;font-size:17px;color:#39424d;margin:-22px 0 24px;line-height:1.72}
- .bar-call{border-left:3px solid var(--orange);background:#fff;padding:22px 24px;margin-bottom:40px;max-width:800px}
+ .bar-call{border-left:3px solid var(--orange);background:#fff;padding:24px 28px;margin-bottom:40px;max-width:none}
+ .bar-call p{columns:2;column-gap:48px}
+ @media(max-width:860px){.bar-call p{columns:1}}
  .bar-call p{font-size:14.5px;color:#39424d;line-height:1.72}
  .bar-call b{color:#a23a17}
  .arc-sub{font-family:var(--disp);font-weight:800;font-size:30px;color:var(--ink2);margin:52px 0 18px;text-transform:uppercase;letter-spacing:.03em}
@@ -285,14 +287,16 @@
  .ty.work b{color:var(--amber)}
  .ty.open b{color:var(--orange)}
  .ty.open span{color:var(--orange)}
- .st{float:right;font-style:normal;font-family:var(--body);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;margin-left:10px}
+ .st{flex:none;font-style:normal;font-family:var(--body);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;margin-left:10px}
  .st.done{background:var(--paper);color:#9aa4ae}
  .st.work{background:rgba(240,160,60,.18);color:#96641c}
  .st.open{background:var(--orange);color:#fff}
- .fix-k{overflow:hidden}
+ .fix-k{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+ .fix-k .st{margin-top:2px}
  .drill-card{margin-top:30px;background:var(--ink2);color:var(--fog);padding:26px 28px;border-left:4px solid var(--orange)}
  .drill-k{font-family:var(--disp);font-weight:800;font-size:22px;color:#fff;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px}
- .drill-card p{font-size:14.5px;line-height:1.75}
+ .drill-card p{font-size:14.5px;line-height:1.75;columns:2;column-gap:48px}
+ @media(max-width:860px){.drill-card p{columns:1}}
  .drill-card b{color:#fff}
  .combo{list-style:none;counter-reset:cb;margin-top:8px;display:grid;gap:0}
  .combo li{counter-increment:cb;position:relative;padding:7px 0 7px 30px;border-top:1px solid var(--paper);font-size:13px;color:#39424d;line-height:1.45}
@@ -728,8 +732,8 @@
    <p class="fix-lead">Cece said it outright after reading the brief: every single thing I had a problem with was a timing problem. Fourteen corrections came out of four privates and they all reduce to <b>when</b> something happens, or in what order. Leela reached the same verdict independently at Cavallo, in a different style, which is the section below the sensual block.</p>
 
    <div class="tally">
-    <div class="ty done"><b>10</b><span>Implemented</span></div>
-    <div class="ty work"><b>2</b><span>Getting there</span></div>
+    <div class="ty done"><b>9</b><span>Implemented</span></div>
+    <div class="ty work"><b>3</b><span>Getting there</span></div>
     <div class="ty open"><b>2</b><span>Still open</span></div>
    </div>
 
@@ -804,9 +808,10 @@
    <div class="fixgrp">Sensual</div>
    <div class="fixes">
     <div class="fix">
-     <div class="fix-k">Timing <i class="st done">Implemented</i></div>
+     <div class="fix-k">Sensual timing <i class="st work">Getting there</i></div>
      <div class="was"><span>Was</span>Rushing sensual moves into 4 counts.</div>
-     <div class="now"><span>Now</span><b>Take 8 counts.</b> There is no prize for finishing early. If any follow still reads 4 on a cuddle bodyroll or bow, look at the prep before looking at the move.</div>
+     <div class="now"><span>Now</span>Taking the full <b>8 counts</b>, which fixed the rushing. It also created a new problem: the follow reads 4, commits to an exit, and <b>pulls back on me around 4</b>. So I am mid-move with her weight already leaving.</div>
+     <div class="why"><span>What that pull-back is telling me</span>She is not guessing. She is answering the last thing I sent her, and the last thing I sent her was at 4. A prep says something is starting. It does not say how long. If my connection goes neutral after count 4 she has no reason to think the move is still running, so she recovers, which is the correct thing for a good follow to do. Two halves to this: prep the <b>length</b>, not just the direction, and keep sending through <b>5 to 8</b> instead of going quiet once the move is underway.</div>
     </div>
     <div class="fix">
      <div class="fix-k">Where it comes from <i class="st done">Implemented</i></div>
