@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SF SBK Congress 2026 - Elijah's Road to Burlingame</title>
+<meta name="author" content="Elijah Carimbocas">
+<meta name="description" content="San Francisco Salsa Bachata Kizomba Zouk Congress, Nov 19-23, 2026, Hyatt Regency SFO. What it costs, what it takes, and eight weeks to get ready.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SF SBK Congress 2026 - Road to Burlingame">
+<meta property="og:description" content="Nov 19-23, Hyatt Regency SFO. Four styles, 140+ workshops, dancing to 7 AM. The bill, the plan, and eight weeks of work.">
+<meta property="og:url" content="https://elijahcarimbocas.github.io/sf-sbk-2026/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Grotesk:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+<style>
+ :root{
+ --night:#0a1120; --night2:#0e1728; --panel:#141f33; --line:rgba(255,255,255,.12);
+ --orange:#e8552f; --gold:#f0b429; --bay:#5b9dd9; --fog:#eef2f7; --fog2:#dfe6ef;
+ --ink:#141b26; --muted:#8c9cb4; --white:#f2f6fc;
+ --display:'Bricolage Grotesque',serif; --body:'Space Grotesk',sans-serif;
+ }
+ *{box-sizing:border-box;margin:0;padding:0}
+ html{scroll-behavior:smooth}
+ body{background:var(--night);color:var(--white);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+ body::before{content:"";position:fixed;inset:0;z-index:-20;pointer-events:none;opacity:.55;
+  background:
+   radial-gradient(70% 50% at 78% 4%, rgba(232,85,47,.20), transparent 60%),
+   radial-gradient(60% 45% at 8% 88%, rgba(91,157,217,.16), transparent 60%)}
+ a{color:inherit;text-decoration:none}
+ .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+ .display{font-family:var(--display);line-height:.95;letter-spacing:-.02em}
+ .eyebrow{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+ /* nav */
+ nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,17,32,.74);border-bottom:1px solid var(--line)}
+ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+ .logo{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em}
+ .logo b{color:var(--orange)}
+ nav ul{display:flex;gap:26px;list-style:none;font-size:14px;font-weight:500}
+ nav a{color:var(--muted);transition:color .2s}
+ nav a:hover{color:var(--white)}
+ @media(max-width:700px){nav ul{display:none}}
+
+ /* hero */
+ header{position:relative;padding:52px 0 60px;overflow:hidden}
+ .hero-inner{display:flex;align-items:center;justify-content:space-between;gap:52px}
+ .hero-left{flex:1;min-width:0}
+ .hero-right{flex-shrink:0}
+ .hero-right .cd-cap{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:14px}
+ @media(max-width:860px){.hero-inner{flex-direction:column;align-items:flex-start;gap:34px}.hero-right{width:100%}}
+ header::after{content:"";position:absolute;inset:0;opacity:.45;z-index:-1;
+ background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
+ .hero-ey{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+ .hero-ey .pill{border:1px solid var(--line);border-radius:100px;padding:6px 14px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--white);font-weight:600}
+ h1{font-family:var(--display);font-weight:800;font-size:clamp(2.3rem,5.6vw,4.6rem);letter-spacing:-.03em;line-height:1.02}
+ h1 .l2{color:var(--orange);font-style:italic;line-height:1.1;padding-bottom:2px}
+ h1 .l3{-webkit-text-stroke:2px var(--gold);color:transparent}
+ .lede{max-width:470px;color:#bccbdf;font-size:16.5px;margin:16px 0 0}
+ .script{font-family:'Caveat',cursive;font-size:26px;color:var(--gold);transform:rotate(-3deg);display:inline-block;margin-top:8px}
+
+ /* countdown */
+ .count{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+ .count .box{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:16px;padding:16px 20px;min-width:118px;text-align:center;backdrop-filter:blur(6px)}
+ .count .num{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;color:var(--white)}
+ @media(max-width:860px){.count{max-width:360px}}
+ .count .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+ .count .box.hl .num{color:var(--orange)}
+
+ /* section frame */
+ section{padding:74px 0;position:relative}
+ .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:44px;flex-wrap:wrap}
+ .sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.8vw,3.3rem)}
+ .sec-head p{color:var(--muted);max-width:420px}
+ .idx{font-family:var(--display);font-weight:800;font-size:15px;color:var(--bay);letter-spacing:.1em;margin-bottom:6px}
+
+ /* congress */
+ .fest-lead{max-width:700px;color:#bccbdf;font-size:18px;margin:0}
+ .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+ .chip{border:1px solid var(--line);border-radius:100px;padding:7px 15px;font-size:13.5px;color:#d6e2f2;background:rgba(255,255,255,.03)}
+ .chip.more{color:var(--gold);border-color:rgba(240,180,41,.4)}
+ .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+ @media(max-width:760px){.facts{grid-template-columns:repeat(2,1fr)}}
+ .fact{border-top:2px solid var(--orange);padding-top:14px}
+ .fact b{display:block;font-family:var(--display);font-weight:800;font-size:30px;line-height:1}
+ .fact span{display:block;font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+ .fact:nth-child(2){border-top-color:var(--gold)}
+ .fact:nth-child(3){border-top-color:var(--bay)}
+ .fact:nth-child(4){border-top-color:var(--orange)}
+
+ /* the bill */
+ #bill{background:rgba(14,23,40,.62)}
+ .scen{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+ @media(max-width:880px){.scen{grid-template-columns:1fr}}
+ .card{background:linear-gradient(160deg,var(--panel),var(--night2));border:1px solid var(--line);border-radius:20px;padding:28px;position:relative;overflow:hidden}
+ .card.pick{border-color:rgba(232,85,47,.55);background:linear-gradient(160deg,rgba(232,85,47,.13),var(--night2))}
+ .card .tag{position:absolute;top:20px;right:20px;font-size:11px;font-weight:700;letter-spacing:.15em;color:#2a0c02;background:var(--orange);padding:5px 11px;border-radius:100px}
+ .card .kd{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+ .card h3{font-family:var(--display);font-weight:800;font-size:28px;margin:10px 0 4px}
+ .card .sub{color:var(--muted);font-size:14px;margin-bottom:18px;line-height:1.5}
+ .card dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px;border-top:1px solid var(--line);padding-top:16px}
+ .card dt{color:var(--muted)}
+ .card dd{text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
+ .card .big{font-family:var(--display);font-weight:800;font-size:38px;margin-top:16px}
+
+ .led{margin-top:44px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02)}
+ .lrow{display:grid;grid-template-columns:1fr 250px 104px;gap:16px;padding:13px 22px;font-size:13.5px;align-items:baseline;border-top:1px solid rgba(255,255,255,.07)}
+ .lrow span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--white)}
+ .lrow span:nth-child(2){color:var(--muted);font-size:12.5px}
+ .lrow span:first-child{color:#bccbdf}
+ .lhead{border-top:0;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+ .lhead span{color:var(--muted)!important}
+ .lgrp{padding:18px 22px 4px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;border-top:1px solid var(--line)}
+ .ltot{border-top:1px solid var(--line);background:rgba(240,180,41,.07);padding-top:16px;padding-bottom:16px}
+ .ltot span:first-child{font-family:var(--display);font-weight:800;font-size:16px;color:var(--white)}
+ .ltot span:last-child{font-family:var(--display);font-weight:800;font-size:19px;color:var(--gold)}
+ .k-est{display:inline-block;font-size:9.5px;letter-spacing:.14em;font-weight:700;border-radius:4px;padding:2px 5px;margin-left:8px;vertical-align:1px}
+ .k-est.known{background:rgba(91,157,217,.2);color:var(--bay)}
+ .k-est.guess{background:rgba(240,180,41,.16);color:var(--gold)}
+ @media(max-width:760px){
+  .lrow{grid-template-columns:1fr auto;gap:4px 14px}
+  .lrow span:nth-child(2){grid-column:1;order:3}
+  .lrow span:last-child{grid-row:1;grid-column:2}
+  .lhead{display:none}
+ }
+ .led-note{margin-top:20px;font-size:14px;color:var(--muted);max-width:720px;line-height:1.65}
+ .led-note b{color:var(--white)}
+ .total-card{margin-top:34px;background:linear-gradient(150deg,var(--orange),#c33f1c);border-radius:22px;padding:34px;color:#fff}
+ .total-card .k{font-size:13px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+ .total-card .v{font-family:var(--display);font-weight:800;font-size:clamp(40px,8vw,56px);line-height:1;margin:8px 0 6px}
+ .total-card .note{font-size:13.5px;opacity:.92;max-width:760px;line-height:1.6}
+
+ /* the room + map */
+ .mapx{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.02);overflow:hidden}
+ .mhead{padding:26px 26px 20px}
+ .mhead h3{font-family:var(--display);font-weight:800;font-size:21px;margin-bottom:8px}
+ .mhead p{font-size:14px;color:var(--muted);line-height:1.6;max-width:640px}
+ #map{height:360px;width:100%;background:#0d1a2a;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+ @media(max-width:640px){#map{height:280px}}
+ .mlegend{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;padding:6px 26px 0}
+ @media(max-width:760px){.mlegend{grid-template-columns:1fr;gap:0}}
+ .mleg{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+ .mleg div{font-size:13px;color:var(--muted);line-height:1.5}
+ .mleg b{display:block;color:var(--white);font-family:var(--display);font-weight:800;font-size:15px;margin-bottom:3px}
+ .mdot{width:13px;height:13px;border-radius:50%;flex:none;margin-top:4px}
+ .mdot.home{background:var(--orange);box-shadow:0 0 10px rgba(232,85,47,.7)}
+ .mdot.air{background:var(--gold);box-shadow:0 0 10px rgba(240,180,41,.7)}
+ .mdot.city{background:var(--bay);box-shadow:0 0 10px rgba(91,157,217,.7)}
+ .mfoot{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:22px 26px 26px}
+ @media(max-width:760px){.mfoot{grid-template-columns:1fr 1fr}}
+ .mfact b{display:block;font-family:var(--display);font-weight:800;font-size:19px;color:var(--bay)}
+ .mfact span{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.4}
+ .leaflet-container{background:var(--night2)}
+ .leaflet-popup-content-wrapper{background:var(--panel);color:var(--white);border-radius:12px;border:1px solid var(--line)}
+ .leaflet-popup-tip{background:var(--panel)}
+ .leaflet-popup-content{margin:12px 16px;font-size:13px;line-height:1.5;font-family:var(--body)}
+ .leaflet-popup-content b{color:var(--gold);font-family:var(--display)}
+ .leaflet-container a.leaflet-popup-close-button{color:var(--muted)}
+ .leaflet-control-attribution{background:rgba(10,17,32,.74)!important;color:var(--muted)!important;font-size:10px}
+ .leaflet-control-attribution a{color:var(--bay)!important}
+ .leaflet-bar a{background:var(--panel);color:var(--white);border-bottom-color:var(--line)}
+ .leaflet-bar a:hover{background:var(--night2);color:var(--white)}
+
+ /* schedule */
+ #schedule{background:rgba(14,23,40,.62)}
+ .tl{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+ @media(max-width:900px){.tl{grid-template-columns:repeat(2,1fr)}}
+ @media(max-width:560px){.tl{grid-template-columns:1fr}}
+ .day{border:1px solid var(--line);border-radius:16px;padding:22px;background:rgba(255,255,255,.02)}
+ .day .d{font-family:var(--display);font-weight:800;font-size:15px;color:var(--orange);letter-spacing:.05em}
+ .day .dt{font-size:12px;color:var(--muted);margin:2px 0 16px}
+ .day ul{list-style:none;font-size:13px;color:#bccbdf}
+ .day li{padding:7px 0;border-top:1px dashed var(--line)}
+ .day li:first-child{border-top:none}
+ .day li em{font-style:normal;display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+ .day.buffer{background:linear-gradient(160deg,rgba(240,180,41,.13),transparent);border-color:rgba(240,180,41,.4)}
+ .day.buffer .d{color:var(--gold)}
+ .sched-note{margin-top:24px;font-size:13.5px;color:var(--muted);max-width:720px;line-height:1.65}
+ .sched-note a{color:var(--bay);border-bottom:1px solid rgba(91,157,217,.4)}
+
+ /* the arc - light panel */
+ #arc{background:var(--fog);color:var(--ink)}
+ #arc .idx{color:#b8431f}
+ #arc .sec-head h2{color:var(--ink)}
+ #arc .sec-head p{color:#5d6675}
+ .brief-lead{max-width:660px;font-size:18px;color:#3c4453;margin:-20px 0 20px}
+ .bar-call{border:1px solid #cdd7e4;border-left:3px solid var(--orange);background:#fff;border-radius:14px;padding:20px 22px;margin-bottom:38px;max-width:760px}
+ .bar-call b{color:#b8431f}
+ .bar-call p{font-size:14.5px;color:#3c4453;line-height:1.65}
+ .weeks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+ @media(max-width:760px){.weeks{grid-template-columns:1fr}}
+ .wk{background:#fff;border:1px solid var(--fog2);border-radius:18px;padding:24px}
+ .wk .wn{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+ .wk .wn b{font-family:var(--display);font-weight:800;font-size:15px;color:var(--orange);letter-spacing:.08em}
+ .wk .wn .dates{font-size:12px;color:#77808f}
+ .wk h4{font-family:var(--display);font-weight:800;font-size:21px;color:var(--ink);margin-bottom:14px}
+ .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+ @media(max-width:420px){.split{grid-template-columns:1fr}}
+ .disc{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+ .disc.b{color:#c2410c}.disc.s{color:#0f6f8f}
+ .wk ul{list-style:none;font-size:13.5px;color:#374151}
+ .wk li{padding-left:16px;position:relative;margin-bottom:5px;line-height:1.5}
+ .wk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+ .wk .drill{margin-top:6px;font-size:12.5px;background:var(--fog);border-radius:10px;padding:10px 12px;color:#4b5563;line-height:1.55}
+ .wk .drill b{color:#b8431f}
+ .wk.peak{background:linear-gradient(160deg,#fff,#fff6e4);border-color:var(--gold);grid-column:1/-1}
+ .cadence{margin-top:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+ @media(max-width:640px){.cadence{grid-template-columns:repeat(2,1fr)}}
+ .cad{background:#fff;border:1px solid var(--fog2);border-radius:14px;padding:18px;text-align:center}
+ .cad .n{font-family:var(--display);font-weight:800;font-size:32px;color:var(--orange)}
+ .cad .t{font-size:12px;color:#5d6675;margin-top:4px;line-height:1.4}
+
+ /* open items */
+ .open{margin-top:44px;border:1px solid rgba(232,85,47,.34);border-radius:16px;padding:26px 28px;background:rgba(232,85,47,.06)}
+ .oh{font-family:var(--display);font-weight:800;font-size:18px;color:var(--orange);margin-bottom:14px}
+ .olist{list-style:none;counter-reset:o;display:grid;gap:13px}
+ .olist li{counter-increment:o;position:relative;padding-left:32px;font-size:14px;color:#bccbdf;line-height:1.6}
+ .olist li::before{content:counter(o);position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;border:1px solid rgba(232,85,47,.5);color:var(--orange);font-size:11px;font-weight:700;display:grid;place-items:center}
+ .olist b{color:var(--white)}
+
+ /* footer */
+ footer{padding:80px 0 60px;text-align:center;border-top:1px solid var(--line);background:rgba(14,23,40,.66)}
+ footer .big{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,7vw,4.4rem);letter-spacing:-.03em}
+ footer .big em{color:var(--orange);font-style:italic;line-height:1.1}
+ footer .refs{margin-top:26px;color:var(--muted);font-size:13px;line-height:1.9}
+ footer .script{font-family:'Caveat',cursive;font-size:30px;color:var(--gold);display:block;margin-top:16px;transform:rotate(-2deg)}
+ .fbtns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+ .fbtn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:100px;font-weight:700;font-size:14.5px;border:1px solid var(--line);transition:transform .15s ease,filter .2s}
+ .fbtn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+ .fbtn:active{transform:translateY(0) scale(.985)}
+ .fbtn.primary{background:var(--orange);color:#2a0c02;border-color:var(--orange)}
+ .fbtn.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;border:none}
+ .fbtn.ghost{background:rgba(255,255,255,.05);color:var(--white)}
+
+ /* reveal */
+ .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+ .rv.in{opacity:1;transform:none}
+ .stg>*{opacity:0;transform:translateY(20px);animation:rise .7s forwards}
+ @keyframes rise{to{opacity:1;transform:none}}
+ @media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .stg>*{opacity:1;transform:none;animation:none}
+  .fbtn{transition:none}
+ }
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="wrap">
+  <div class="logo">SBK<b>.</b>26</div>
+  <ul>
+   <li><a href="#congress">The Congress</a></li>
+   <li><a href="#bill">The Bill</a></li>
+   <li><a href="#room">The Room</a></li>
+   <li><a href="#schedule">Five Days</a></li>
+   <li><a href="#arc">The Arc</a></li>
+  </ul>
+ </div>
+</nav>
+
+<header>
+ <div class="wrap">
+  <div class="hero-inner stg">
+   <div class="hero-left">
+    <div class="hero-ey" style="animation-delay:.05s">
+     <span class="pill">Nov 19-23, 2026</span>
+     <span class="pill">Burlingame &middot; SFO</span>
+     <span class="eyebrow">Road to SBK</span>
+    </div>
+    <h1 style="animation-delay:.12s">San Francisco<br><span class="l2">Salsa Bachata</span><br><span class="l3">Kizomba Zouk</span></h1>
+    <p class="lede" style="animation-delay:.2s">Four styles, 140+ workshops, dancing to 7 AM. Nothing booked yet. Eight weeks to get sharp.</p>
+    <div class="script" style="animation-delay:.26s">harder room this time.</div>
+   </div>
+   <div class="hero-right" style="animation-delay:.32s">
+    <div class="count" id="count">
+     <div class="box hl"><div class="num" id="cd-d">--</div><div class="lbl">Days</div></div>
+     <div class="box"><div class="num" id="cd-h">--</div><div class="lbl">Hours</div></div>
+     <div class="box"><div class="num" id="cd-m">--</div><div class="lbl">Minutes</div></div>
+     <div class="box"><div class="num" id="cd-s">--</div><div class="lbl">Seconds</div></div>
+    </div>
+    <div class="cd-cap">until the Thursday pre-party</div>
+   </div>
+  </div>
+ </div>
+</header>
+
+<!-- CONGRESS -->
+<section id="congress">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div>
+    <h2>Four rooms, one hotel, no sleep.</h2>
+   </div>
+   <p>Seven years running. The biggest SBK weekend in the country.</p>
+  </div>
+  <p class="fest-lead rv">Salsa, bachata, kizomba and Brazilian zouk, all under one roof at the Hyatt Regency SFO. Workshops from 10 AM, afternoon socials, shows every night, and the floor stays open until roughly 7 in the morning. Artists and DJs fly in from Europe, Asia and Latin America. Three competitions run alongside it.</p>
+  <div class="chips rv">
+   <span class="chip">Salsanama &middot; hosted by Tropical Gem, Italy</span>
+   <span class="chip">Bachata J&amp;J &middot; Innesence Dance Company</span>
+   <span class="chip">BZDC Zouk J&amp;J &middot; novice to all-star</span>
+   <span class="chip">Wednesday and Thursday pre-parties</span>
+   <span class="chip more">+ full international lineup</span>
+  </div>
+  <div class="facts rv">
+   <div class="fact"><b>2,500+</b><span>dancers on the floor</span></div>
+   <div class="fact"><b>140+</b><span>workshops across three days</span></div>
+   <div class="fact"><b>80-100</b><span>shows every night</span></div>
+   <div class="fact"><b>~7 AM</b><span>when the music finally stops</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- THE BILL -->
+<section id="bill">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div>
+    <div class="idx">THE BILL</div>
+    <h2>What it runs.</h2>
+   </div>
+   <p>Nothing is booked. These are estimates, and every line says where it came from.</p>
+  </div>
+
+  <div class="scen">
+   <div class="card rv">
+    <span class="tag">LEAN</span>
+    <div class="kd">Shared room</div>
+    <h3>Split it</h3>
+    <div class="sub">Thu to Mon, room off their official room-sharing page, pass bought this month</div>
+    <dl>
+     <dt>Flight</dt><dd>$160</dd>
+     <dt>Hotel &times;4, split</dt><dd>$480</dd>
+     <dt>Full pass</dt><dd>$220</dd>
+     <dt>Food, rides</dt><dd>$245</dd>
+    </dl>
+    <div class="big">$1,105</div>
+   </div>
+   <div class="card pick rv">
+    <span class="tag">BASELINE</span>
+    <div class="kd">Own room</div>
+    <h3>Solo, four nights</h3>
+    <div class="sub">Thu to Mon in the venue hotel. Roll out of bed into the ballroom.</div>
+    <dl>
+     <dt>Flight</dt><dd>$180</dd>
+     <dt>Hotel &times;4, all-in</dt><dd>$960</dd>
+     <dt>Full pass</dt><dd>$250</dd>
+     <dt>Food, rides</dt><dd>$350</dd>
+    </dl>
+    <div class="big">$1,740</div>
+   </div>
+   <div class="card rv">
+    <span class="tag">FULL SEND</span>
+    <div class="kd">Five nights</div>
+    <h3>Wednesday too</h3>
+    <div class="sub">In for the Wednesday pre-party, own room, one competition entry</div>
+    <dl>
+     <dt>Flight</dt><dd>$220</dd>
+     <dt>Hotel &times;5, all-in</dt><dd>$1,200</dd>
+     <dt>Pass + J&amp;J</dt><dd>$320</dd>
+     <dt>Food, rides, merch</dt><dd>$500</dd>
+    </dl>
+    <div class="big">$2,240</div>
+   </div>
+  </div>
+
+  <div class="led rv">
+   <div class="lrow lhead"><span>Line</span><span>Where the number came from</span><span>Amount</span></div>
+
+   <div class="lgrp">Getting there</div>
+   <div class="lrow"><span>PHX to SFO roundtrip <span class="k-est guess">EST</span></span><span>Nonstop on Southwest, American, Alaska, United. ~2h10m. Booked eight weeks out.</span><span>$180</span></div>
+   <div class="lrow"><span>Airport transfer <span class="k-est known">KNOWN</span></span><span>Free 24/7 Hyatt shuttle, 4 miles, ~7 min, every 15-20 min.</span><span>$0</span></div>
+
+   <div class="lgrp">Staying there</div>
+   <div class="lrow"><span>Hyatt Regency SFO, nightly <span class="k-est guess">EST</span></span><span>Group block G-SF22. Third-party listings put the area around $210.</span><span>$210</span></div>
+   <div class="lrow"><span>Burlingame lodging tax + assessments <span class="k-est guess">EST</span></span><span>San Mateo County TOT 12% plus tourism assessment.</span><span>~14%</span></div>
+   <div class="lrow"><span>Four nights, all-in</span><span>Thu Nov 19 through Mon Nov 23 checkout.</span><span>$960</span></div>
+
+   <div class="lgrp">The pass</div>
+   <div class="lrow"><span>Full pass <span class="k-est guess">EST</span></span><span>Real tiers are behind a login on Danceplace. Third-party listing quotes around $220.</span><span>$220</span></div>
+   <div class="lrow"><span>Late-tier risk <span class="k-est guess">EST</span></span><span>Hawaii went $175 team rate to $275 at the door. Assume the same climb.</span><span>+$30-100</span></div>
+   <div class="lrow"><span>Transfers, if plans change <span class="k-est known">KNOWN</span></span><span>No refunds, all sales final. Transfer allowed for a flat fee.</span><span>$30</span></div>
+
+   <div class="lgrp">On the ground</div>
+   <div class="lrow"><span>Food, four days <span class="k-est guess">EST</span></span><span>Airport strip, not Waikiki. Fewer walkable options and a 7 AM finish.</span><span>$280</span></div>
+   <div class="lrow"><span>Rides and late-night <span class="k-est guess">EST</span></span><span>Getting to real food in downtown Burlingame or San Mateo.</span><span>$70</span></div>
+
+   <div class="lrow ltot"><span>Baseline, solo room</span><span></span><span>$1,740</span></div>
+  </div>
+
+  <p class="led-note rv">Two numbers are doing all the work here and both need a human with a browser. <b>Pass tiers</b> live behind the Danceplace cart, which wants a login before it shows a price. <b>The Hyatt group rate</b> sits behind the G-SF22 block link, and Hyatt blocks anything that is not a real browser. Open both, screenshot them, and the estimate becomes a budget.</p>
+
+  <div class="total-card rv">
+   <div class="k">Versus Waikiki</div>
+   <div class="v">$800 cheaper</div>
+   <div class="note">Hawaii landed at roughly $2,551 all-in. The solo-room version of this trip comes in around $1,740, and almost all of the gap is the flight and the resort fee. Two hours to SFO instead of six to Honolulu, a free airport shuttle instead of cabs, and an airport Hyatt that should carry no resort charge at all.</div>
+  </div>
+
+  <div class="open rv">
+   <div class="oh">Still open</div>
+   <ol class="olist">
+    <li><b>Get the real pass tiers.</b> Danceplace listing 15818. Every number on this page is provisional until that screenshot exists.</li>
+    <li><b>Open the Hyatt block, code G-SF22.</b> Need the nightly rate, the cutoff date, and whether World of Hyatt points still earn on the group rate. They did at the Waikiki Hyatt.</li>
+    <li><b>Room share or solo.</b> A $480 swing. They run an official room-sharing page for exactly this.</li>
+    <li><b>Book the flight by mid-October.</b> Nov 23 is the Monday of Thanksgiving week, so fares that whole week sit above baseline and only move one way.</li>
+    <li><b>Decide on the Bachata J&amp;J.</b> Jack and jill, no partner needed. Cheapest honest read on where this room actually sits.</li>
+   </ol>
+  </div>
+ </div>
+</section>
+
+<!-- THE ROOM -->
+<section id="room">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div>
+    <h2>It says San Francisco. It means Burlingame.</h2>
+   </div>
+   <p>Fifteen miles south of the city, four miles from the airport.</p>
+  </div>
+  <div class="mapx rv">
+   <div class="mhead">
+    <h3>Hyatt Regency San Francisco Airport</h3>
+    <p>1333 Old Bayshore Hwy, Burlingame, CA 94010. Hotel and venue are the same building, so there is no commute once you land. Downtown San Francisco is a 25 to 40 minute drive north, which matters only if you plan a day off. Nobody plans a day off.</p>
+   </div>
+   <div id="map" role="img" aria-label="Map of SFO airport, the Hyatt Regency in Burlingame, and downtown San Francisco"></div>
+   <div class="mlegend">
+    <div class="mleg"><div class="mdot home"></div><div><b>Hyatt Regency SFO</b>Your room, four ballrooms, every workshop and every social.</div></div>
+    <div class="mleg"><div class="mdot air"></div><div><b>SFO</b>Four miles. Free hotel shuttle, 24 hours, every 15 to 20 minutes.</div></div>
+    <div class="mleg"><div class="mdot city"></div><div><b>Downtown San Francisco</b>About 15 miles north. Not walking distance to anything at the congress.</div></div>
+    <div class="mleg"><div class="mdot home"></div><div><b>Downtown Burlingame</b>A mile and a half west. Where the real food is.</div></div>
+   </div>
+   <div class="mfoot">
+    <div class="mfact"><b>0 min</b><span>commute to the ballroom</span></div>
+    <div class="mfact"><b>7 min</b><span>shuttle from SFO</span></div>
+    <div class="mfact"><b>2h10m</b><span>nonstop from PHX</span></div>
+    <div class="mfact"><b>4</b><span>rooms running at once</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div>
+    <h2>Five days, two of them optional.</h2>
+   </div>
+   <p>Shape is confirmed. Exact times move, so check their sheet before you fly.</p>
+  </div>
+  <div class="tl">
+   <div class="day rv">
+    <div class="d">WED</div>
+    <div class="dt">Nov 18</div>
+    <ul>
+     <li>Early pre-party<em>Optional. Costs an extra hotel night.</em></li>
+     <li>Artists start landing</li>
+    </ul>
+   </div>
+   <div class="day rv">
+    <div class="d">THU</div>
+    <div class="dt">Nov 19</div>
+    <ul>
+     <li>Fly PHX to SFO<em>Shuttle to the hotel, check in</em></li>
+     <li>Official pre-party, 10 PM to 3 AM<em>Three rooms, at the venue</em></li>
+    </ul>
+   </div>
+   <div class="day rv">
+    <div class="d">FRI</div>
+    <div class="dt">Nov 20</div>
+    <ul>
+     <li>Workshops from 10 AM</li>
+     <li>Afternoon social</li>
+     <li>Shows</li>
+     <li>Dancing until ~7 AM</li>
+    </ul>
+   </div>
+   <div class="day rv">
+    <div class="d">SAT</div>
+    <div class="dt">Nov 21</div>
+    <ul>
+     <li>Workshops</li>
+     <li>Salsanama + Bachata J&amp;J<em>Competition day</em></li>
+     <li>Shows</li>
+     <li>Dancing until ~7 AM</li>
+    </ul>
+   </div>
+   <div class="day rv buffer">
+    <div class="d">SUN &rarr; MON</div>
+    <div class="dt">Nov 22-23</div>
+    <ul>
+     <li>Final workshops</li>
+     <li>Closing night</li>
+     <li>Mon: fly home<em>Pack Sunday. The floor runs to 7 AM.</em></li>
+    </ul>
+   </div>
+  </div>
+  <p class="sched-note rv">Their General Program page points at a live Google Sheet as the source of truth, and it says outright to check that link when in doubt. Times above are the published shape, not the final grid. <a href="https://sfsbkcongress.dance/general-program" target="_blank" rel="noopener">General Program</a></p>
+ </div>
+</section>
+
+<!-- THE ARC -->
+<section id="arc">
+ <div class="wrap">
+  <div class="sec-head rv">
+   <div>
+    <div class="idx">THE ARC</div>
+    <h2>Eight weeks.</h2>
+   </div>
+   <p>Hawaii got six. This one gets eight, and it needs them.</p>
+  </div>
+  <p class="brief-lead rv">Four days of straight dancing in Waikiki are done. The reps carried over. The problem is that the room in Burlingame is better, so the same level that felt comfortable on the beach is going to feel average on a floor of 2,500.</p>
+
+  <div class="bar-call rv">
+   <p><b>Carlitos put a number on it.</b> He rated the Hawaii floor at 5 to 7. He rates this one 6 to 8. One point does not sound like much until you are the weakest lead in a line of four. The ceiling is higher here, which means the good followers are better, the songs go longer, and nothing gets carried by the vibe.</p>
+  </div>
+
+  <div class="weeks">
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 1</b><span class="dates">Sep 21-27</span></div>
+    <h4>Reset the base</h4>
+    <div class="split">
+     <div><div class="disc s">Salsa</div><ul><li>Basic, cross body, right turn, clean and slow</li><li>Find the 1 in unfamiliar tracks</li></ul></div>
+     <div><div class="disc b">Bachata</div><ul><li>Weight change and hip, no arms</li><li>Basic to side step, no bounce</li></ul></div>
+    </div>
+    <div class="drill"><b>Private with Leela, Sep 25.</b> Bring one question, not five. Ask her what breaks first when you get tired.</div>
+   </div>
+
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 2</b><span class="dates">Sep 28 - Oct 4</span></div>
+    <h4>Lead clarity</h4>
+    <div class="split">
+     <div><div class="disc s">Salsa</div><ul><li>Frame tension, same pressure every rep</li><li>Cross body with inside turn</li></ul></div>
+     <div><div class="disc b">Bachata</div><ul><li>Lead the turn from the body, not the hand</li><li>Traditional footwork at speed</li></ul></div>
+    </div>
+    <div class="drill"><b>Drill:</b> One social. Dance only with people better than you, and count how many times you had to fix a lead mid-move.</div>
+   </div>
+
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 3</b><span class="dates">Oct 5-11</span></div>
+    <h4>Add the second style back</h4>
+    <div class="split">
+     <div><div class="disc s">Salsa</div><ul><li>Shines, four counts, repeatable</li><li>Hammerlock chain</li></ul></div>
+     <div><div class="disc b">Bachata</div><ul><li>Sensual: body wave into a turn</li><li>Two combos, banked</li></ul></div>
+    </div>
+    <div class="drill"><b>Drill:</b> Record one song of each. Watch it back on mute. If the shape does not read without music, it does not read on the floor.</div>
+   </div>
+
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 4</b><span class="dates">Oct 12-18</span></div>
+    <h4>Musicality</h4>
+    <div class="split">
+     <div><div class="disc s">Salsa</div><ul><li>Hit the break, do not just keep stepping</li><li>Pause on purpose, then move</li></ul></div>
+     <div><div class="disc b">Bachata</div><ul><li>Mambo section accents</li><li>Slow down to half time and hold it</li></ul></div>
+    </div>
+    <div class="drill"><b>Private with Leela.</b> Bring the muted video from week 3. Let her pick what to cut.</div>
+   </div>
+
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 5</b><span class="dates">Oct 19-25</span></div>
+    <h4>Stamina</h4>
+    <div class="split">
+     <div><div class="disc s">Salsa</div><ul><li>Three songs back to back, no sitting</li><li>Keep the frame in song three</li></ul></div>
+     <div><div class="disc b">Bachata</div><ul><li>Same, and watch the shoulders drop</li></ul></div>
+    </div>
+    <div class="drill"><b>Reality check:</b> the floor at SBK runs to 7 AM. Four days of it. If you gas out in song three at a Tuesday social, you will not last a night there.</div>
+   </div>
+
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 6</b><span class="dates">Oct 26 - Nov 1</span></div>
+    <h4>Kizomba and zouk, at least the basics</h4>
+    <div class="split">
+     <div><div class="disc s">New</div><ul><li>Kizomba walk and saida</li><li>Zouk basic and head movement, follow side too</li></ul></div>
+     <div><div class="disc b">Keep</div><ul><li>Salsa and bachata combos stay warm</li></ul></div>
+    </div>
+    <div class="drill"><b>Why bother:</b> two of the four rooms are kizomba and zouk. Walking in with zero means paying for a pass you only half use.</div>
+   </div>
+
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 7</b><span class="dates">Nov 2-8</span></div>
+    <h4>Pressure test</h4>
+    <div class="split">
+     <div><div class="disc s">Salsa</div><ul><li>Freestyle to unknown tracks only</li><li>No rehearsed openers</li></ul></div>
+     <div><div class="disc b">Bachata</div><ul><li>Dance with strangers, not the regulars</li><li>Ask for one correction per dance</li></ul></div>
+    </div>
+    <div class="drill"><b>Private with Leela.</b> Last one where new material is allowed. After this it is polish only.</div>
+   </div>
+
+   <div class="wk rv">
+    <div class="wn"><b>WEEK 8</b><span class="dates">Nov 9-15</span></div>
+    <h4>Polish, no new material</h4>
+    <div class="split">
+     <div><div class="disc s">Salsa</div><ul><li>The two combos that actually land, clean</li><li>Exits, so every move ends somewhere</li></ul></div>
+     <div><div class="disc b">Bachata</div><ul><li>One sensual combo, one traditional, both boring-clean</li></ul></div>
+    </div>
+    <div class="drill"><b>Drill:</b> run them until they are dull. Dull is the point. Dull survives a 2 AM floor when you cannot think.</div>
+   </div>
+
+   <div class="wk peak rv">
+    <div class="wn"><b>PEAK WEEK</b><span class="dates">Nov 16-18</span></div>
+    <h4>Sharpen, rest, pack</h4>
+    <div class="split">
+     <div><div class="disc s">Do</div><ul><li>One easy social, low pressure</li><li>Stretch, sleep, hydrate</li><li>Pack Tuesday so Wednesday is free</li></ul></div>
+     <div><div class="disc b">Don't</div><ul><li>No new combos</li><li>No late nights</li><li>No panic practice</li></ul></div>
+    </div>
+    <div class="drill"><b>Land loose.</b> The Thursday pre-party runs 10 PM to 3 AM and it is the first read the room gets on you. Arrive warm, not wrecked.</div>
+   </div>
+  </div>
+
+  <div class="cadence rv">
+   <div class="cad"><div class="n">45<span style="font-size:16px">m</span></div><div class="t">daily practice</div></div>
+   <div class="cad"><div class="n">2&times;</div><div class="t">socials per week</div></div>
+   <div class="cad"><div class="n">4</div><div class="t">privates with Leela</div></div>
+   <div class="cad"><div class="n">4</div><div class="t">styles to cover</div></div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div class="big rv">Harder room. <em>Go anyway.</em></div>
+  <div class="script">eight weeks. start Monday.</div>
+  <div class="fbtns rv" style="justify-content:center">
+   <a class="fbtn primary" href="https://www.danceplace.com/book/it/15818" target="_blank" rel="noopener">Buy Passes &rarr;</a>
+   <a class="fbtn ghost" href="https://www.hyatt.com/events/en-US/group-booking/SFOBU/G-SF22" target="_blank" rel="noopener">Hotel Block</a>
+   <a class="fbtn ig" href="https://www.instagram.com/sfsbkcongress/" target="_blank" rel="noopener">Instagram</a>
+   <a class="fbtn ghost" href="https://sfsbkcongress.dance/" target="_blank" rel="noopener">Official Site</a>
+  </div>
+  <div class="refs rv">
+   SF SBK(Z) Congress &middot; Nov 19-23, 2026 &middot; Hyatt Regency San Francisco Airport, Burlingame CA<br>
+   Costs on this page are estimates until the pass tiers and the group rate are confirmed.
+  </div>
+ </div>
+</footer>
+
+<script>
+ // countdown to the Thursday official pre-party, 10 PM Pacific
+ var target = new Date("2026-11-19T22:00:00-08:00").getTime();
+ function tick(){
+  var d = Math.max(0, target - Date.now());
+  document.getElementById('cd-d').textContent = Math.floor(d/86400000);
+  document.getElementById('cd-h').textContent = String(Math.floor(d%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(Math.floor(d%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(Math.floor(d%60000/1000)).padStart(2,'0');
+ }
+ tick(); setInterval(tick, 1000);
+
+ // scroll reveal
+ var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+   if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+ }, {threshold:.15});
+ document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+ // where Burlingame actually sits relative to SFO and the city
+ window.addEventListener('load', function(){
+  var el = document.getElementById('map');
+  if (!el || typeof L === 'undefined') { return; }
+  var hyatt = [37.5930, -122.3593],
+      sfo   = [37.6213, -122.3790],
+      city  = [37.7879, -122.4074],
+      bgame = [37.5793, -122.3480];
+  var map = L.map(el, {zoomControl:true, scrollWheelZoom:false, attributionControl:true});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+   {attribution:'Tiles &copy; Esri, Maxar, Earthstar Geographics', maxZoom:19}).addTo(map);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+   {maxZoom:19, opacity:.85}).addTo(map);
+  function pin(color){
+   return L.divIcon({className:'', iconSize:[18,18], iconAnchor:[9,9], popupAnchor:[0,-11],
+    html:'<div style="width:18px;height:18px;background:'+color+';border-radius:50%;border:2.5px solid rgba(255,255,255,.95);box-shadow:0 0 0 2px rgba(6,14,26,.55),0 0 16px '+color+'"></div>'});
+  }
+  L.polyline([sfo, hyatt], {color:'#ffffff', weight:4, opacity:.5, dashArray:'2 9', lineCap:'round'}).addTo(map);
+  L.polyline([sfo, hyatt], {color:'#f0b429', weight:2, opacity:.95, dashArray:'7 8'}).addTo(map);
+  L.polyline([hyatt, city], {color:'#5b9dd9', weight:2, opacity:.6, dashArray:'4 10'}).addTo(map);
+  L.marker(hyatt, {icon:pin('#e8552f')}).addTo(map)
+   .bindPopup('<b>Hyatt Regency SFO</b><br>1333 Old Bayshore Hwy<br>Your room and all four ballrooms');
+  L.marker(sfo, {icon:pin('#f0b429')}).addTo(map)
+   .bindPopup('<b>SFO</b><br>4 miles out<br>Free hotel shuttle, 24/7, every 15-20 min');
+  L.marker(city, {icon:pin('#5b9dd9')}).addTo(map)
+   .bindPopup('<b>Downtown San Francisco</b><br>~15 miles north<br>25 to 40 minutes by car');
+  L.marker(bgame, {icon:pin('#e8552f')}).addTo(map)
+   .bindPopup('<b>Downtown Burlingame</b><br>Burlingame Ave<br>Closest real food, ~1.5 miles');
+  map.fitBounds(L.latLngBounds([sfo, hyatt, city, bgame]).pad(0.25));
+ });
+</script>
+</body>
+</html>
