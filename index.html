@@ -190,28 +190,57 @@
  .bar-call{border:1px solid #cdd7e4;border-left:3px solid var(--orange);background:#fff;border-radius:14px;padding:20px 22px;margin-bottom:38px;max-width:760px}
  .bar-call b{color:#b8431f}
  .bar-call p{font-size:14.5px;color:#3c4453;line-height:1.65}
- .weeks{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
- @media(max-width:760px){.weeks{grid-template-columns:1fr}}
- .wk{background:#fff;border:1px solid var(--fog2);border-radius:18px;padding:24px}
- .wk .wn{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;flex-wrap:wrap}
- .wk .wn b{font-family:var(--display);font-weight:800;font-size:15px;color:var(--orange);letter-spacing:.08em}
- .wk .wn .dates{font-size:12px;color:#77808f}
- .wk h4{font-family:var(--display);font-weight:800;font-size:21px;color:var(--ink);margin-bottom:14px}
- .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
- @media(max-width:420px){.split{grid-template-columns:1fr}}
- .disc{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
- .disc.b{color:#c2410c}.disc.s{color:#0f6f8f}
- .wk ul{list-style:none;font-size:13.5px;color:#374151}
- .wk li{padding-left:16px;position:relative;margin-bottom:5px;line-height:1.5}
- .wk li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--orange)}
- .wk .drill{margin-top:6px;font-size:12.5px;background:var(--fog);border-radius:10px;padding:10px 12px;color:#4b5563;line-height:1.55}
- .wk .drill b{color:#b8431f}
- .wk.peak{background:linear-gradient(160deg,#fff,#fff6e4);border-color:var(--gold);grid-column:1/-1}
  .cadence{margin-top:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
  @media(max-width:640px){.cadence{grid-template-columns:repeat(2,1fr)}}
  .cad{background:#fff;border:1px solid var(--fog2);border-radius:14px;padding:18px;text-align:center}
  .cad .n{font-family:var(--display);font-weight:800;font-size:32px;color:var(--orange)}
  .cad .t{font-size:12px;color:#5d6675;margin-top:4px;line-height:1.4}
+
+
+ /* deadline banner */
+ .deadline{display:flex;gap:18px;align-items:flex-start;border:1px solid rgba(240,180,41,.45);background:rgba(240,180,41,.08);border-radius:14px;padding:18px 22px;margin-bottom:30px;flex-wrap:wrap}
+ .deadline b{font-family:var(--display);font-weight:800;font-size:16px;color:var(--gold);white-space:nowrap}
+ .deadline span{font-size:14px;color:#bccbdf;line-height:1.6;flex:1;min-width:260px}
+
+ /* the engine, light panel */
+ .arc-sub{font-family:var(--display);font-weight:800;font-size:22px;color:var(--ink);margin:46px 0 16px}
+ .rule-card{display:flex;gap:24px;align-items:center;background:#fff;border:1px solid var(--fog2);border-left:3px solid var(--orange);border-radius:18px;padding:24px 26px;max-width:860px;flex-wrap:wrap}
+ .rule-n{font-family:var(--display);font-weight:800;font-size:46px;color:var(--orange);line-height:1}
+ .rule-t{flex:1;min-width:260px}
+ .rule-t b{display:block;font-size:16px;color:var(--ink);margin-bottom:6px}
+ .rule-t span{display:block;font-size:14px;color:#4b5563;line-height:1.65}
+
+ .wkly{background:#fff;border:1px solid var(--fog2);border-radius:18px;overflow:hidden}
+ .wrow{display:grid;grid-template-columns:62px 216px 1fr;gap:20px;padding:16px 24px;align-items:baseline;border-top:1px solid var(--fog2);font-size:13.5px}
+ .wrow:first-child{border-top:0}
+ .wd{font-family:var(--display);font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.05em}
+ .wv{color:var(--ink);font-weight:500;line-height:1.5}
+ .wv i{font-style:italic;color:#77808f;font-weight:400}
+ .ww{color:#5d6675;line-height:1.55}
+ @media(max-width:780px){.wrow{grid-template-columns:54px 1fr;gap:4px 14px;padding:16px 18px}.wd{grid-row:span 2}.ww{grid-column:2}}
+
+ .versus{display:grid;grid-template-columns:1fr 46px 1fr;align-items:stretch}
+ @media(max-width:760px){.versus{grid-template-columns:1fr;gap:14px}}
+ .vs-col{background:#fff;border:1px solid var(--fog2);border-radius:18px;padding:22px 24px}
+ .vs-h{font-family:var(--display);font-weight:800;font-size:17px;color:var(--ink);margin-bottom:12px}
+ .vs-line{font-size:13.5px;color:#374151;padding:9px 0;border-top:1px solid var(--fog);line-height:1.5}
+ .vs-line b{color:var(--orange);font-weight:700;letter-spacing:.03em}
+ .vs-line span{color:#77808f}
+ .vs-note{margin-top:14px;font-size:12.5px;color:#4b5563;background:var(--fog);border-radius:10px;padding:11px 13px;line-height:1.55}
+ .vs-note b{color:#b8431f}
+ .vs-mid{display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px;color:#9aa4b2}
+ .verdict{margin-top:18px;max-width:860px}
+ .verdict p{font-size:14.5px;color:#3c4453;line-height:1.7;margin-bottom:10px}
+ .verdict b{color:#b8431f}
+
+ .rail{border-left:2px solid var(--fog2);margin-left:6px}
+ .ri{display:grid;grid-template-columns:118px 1fr;gap:20px;padding:0 0 22px 24px;position:relative}
+ .ri::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--orange)}
+ .ri.last::before{background:var(--orange)}
+ .rd{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#77808f;padding-top:1px}
+ .rc{font-size:13.5px;color:#5d6675;line-height:1.6}
+ .rc b{display:block;font-family:var(--display);font-weight:800;font-size:16px;color:var(--ink);margin-bottom:4px}
+ @media(max-width:640px){.ri{grid-template-columns:1fr;gap:4px}}
 
  /* open items */
  .open{margin-top:44px;border:1px solid rgba(232,85,47,.34);border-radius:16px;padding:26px 28px;background:rgba(232,85,47,.06)}
@@ -258,7 +287,7 @@
    <li><a href="#bill">The Bill</a></li>
    <li><a href="#room">The Room</a></li>
    <li><a href="#schedule">Five Days</a></li>
-   <li><a href="#arc">The Arc</a></li>
+   <li><a href="#arc">The Engine</a></li>
   </ul>
  </div>
 </nav>
@@ -323,7 +352,12 @@
     <div class="idx">THE BILL</div>
     <h2>What it runs.</h2>
    </div>
-   <p>Nothing is booked. These are estimates, and every line says where it came from.</p>
+   <p>Pass prices are real, pulled off the Danceplace cart. Hotel and flight are still estimates.</p>
+  </div>
+
+  <div class="deadline rv">
+   <b>Buy the pass before Sep 30.</b>
+   <span>The full pass is priced as a September tier at $273.71 all-in. October has its own number. This is the only hard deadline on the whole trip.</span>
   </div>
 
   <div class="scen">
@@ -331,83 +365,88 @@
     <span class="tag">LEAN</span>
     <div class="kd">Shared room</div>
     <h3>Split it</h3>
-    <div class="sub">Thu to Mon, room off their official room-sharing page, pass bought this month</div>
+    <div class="sub">Thu to Mon, room off their official room-sharing page, skip the pre-party</div>
     <dl>
      <dt>Flight</dt><dd>$160</dd>
      <dt>Hotel &times;4, split</dt><dd>$480</dd>
-     <dt>Full pass</dt><dd>$220</dd>
+     <dt>Full pass</dt><dd>$274</dd>
      <dt>Food, rides</dt><dd>$245</dd>
     </dl>
-    <div class="big">$1,105</div>
+    <div class="big">$1,159</div>
    </div>
    <div class="card pick rv">
     <span class="tag">BASELINE</span>
     <div class="kd">Own room</div>
     <h3>Solo, four nights</h3>
-    <div class="sub">Thu to Mon in the venue hotel. Roll out of bed into the ballroom.</div>
+    <div class="sub">Thu to Mon in the venue hotel, pre-party included. Roll out of bed into the ballroom.</div>
     <dl>
      <dt>Flight</dt><dd>$180</dd>
      <dt>Hotel &times;4, all-in</dt><dd>$960</dd>
-     <dt>Full pass</dt><dd>$250</dd>
+     <dt>Full pass</dt><dd>$274</dd>
+     <dt>Pre-party</dt><dd>$27</dd>
      <dt>Food, rides</dt><dd>$350</dd>
     </dl>
-    <div class="big">$1,740</div>
+    <div class="big">$1,790</div>
    </div>
    <div class="card rv">
     <span class="tag">FULL SEND</span>
     <div class="kd">Five nights</div>
     <h3>Wednesday too</h3>
-    <div class="sub">In for the Wednesday pre-party, own room, one competition entry</div>
+    <div class="sub">In Wednesday, own room, one competition, and the Karel Flores bootcamp</div>
     <dl>
      <dt>Flight</dt><dd>$220</dd>
      <dt>Hotel &times;5, all-in</dt><dd>$1,200</dd>
-     <dt>Pass + J&amp;J</dt><dd>$320</dd>
+     <dt>Pass + pre-party</dt><dd>$300</dd>
+     <dt>Comp + bootcamp</dt><dd>$200</dd>
      <dt>Food, rides, merch</dt><dd>$500</dd>
     </dl>
-    <div class="big">$2,240</div>
+    <div class="big">$2,421</div>
    </div>
   </div>
 
   <div class="led rv">
-   <div class="lrow lhead"><span>Line</span><span>Where the number came from</span><span>Amount</span></div>
+   <div class="lrow lhead"><span>Line</span><span>Where the number came from</span><span>All-in</span></div>
+
+   <div class="lgrp">The pass, real prices</div>
+   <div class="lrow"><span>Full Pass, September tier <span class="k-est known">KNOWN</span></span><span>$260 plus $13.71 Danceplace fee. All four styles, plus Fri/Sat/Sun shows and every afternoon and night party.</span><span>$273.71</span></div>
+   <div class="lrow"><span>Thursday pre-party, early bird <span class="k-est known">KNOWN</span></span><span>Separate ticket, not in the pass. $25 plus $1.60.</span><span>$26.60</span></div>
+   <div class="lrow"><span>Bootcamp, Karel Flores, 10 hrs <span class="k-est known">KNOWN</span></span><span>Under $16 an hour. Best value on the menu. Needs the full pass first.</span><span>$158.04</span></div>
+   <div class="lrow"><span>Bachata Social Competition <span class="k-est known">KNOWN</span></span><span>Full or performance pass required.</span><span>$42.38</span></div>
+   <div class="lrow"><span>Three day passes instead <span class="k-est known">KNOWN</span></span><span>Fri $147.53, Sat $179.07, Sun $158.04. Only worth it if you fly in for one night.</span><span>$484.64</span></div>
 
    <div class="lgrp">Getting there</div>
-   <div class="lrow"><span>PHX to SFO roundtrip <span class="k-est guess">EST</span></span><span>Nonstop on Southwest, American, Alaska, United. ~2h10m. Booked eight weeks out.</span><span>$180</span></div>
+   <div class="lrow"><span>PHX to SFO roundtrip <span class="k-est guess">EST</span></span><span>Nonstop on Southwest, American, Alaska, United. ~2h10m.</span><span>$180</span></div>
    <div class="lrow"><span>Airport transfer <span class="k-est known">KNOWN</span></span><span>Free 24/7 Hyatt shuttle, 4 miles, ~7 min, every 15-20 min.</span><span>$0</span></div>
 
    <div class="lgrp">Staying there</div>
-   <div class="lrow"><span>Hyatt Regency SFO, nightly <span class="k-est guess">EST</span></span><span>Group block G-SF22. Third-party listings put the area around $210.</span><span>$210</span></div>
-   <div class="lrow"><span>Burlingame lodging tax + assessments <span class="k-est guess">EST</span></span><span>San Mateo County TOT 12% plus tourism assessment.</span><span>~14%</span></div>
+   <div class="lrow"><span>Hyatt Regency SFO, nightly <span class="k-est guess">EST</span></span><span>Group block G-SF22. Hyatt blocks bots, so this one still needs Chrome.</span><span>~$240</span></div>
    <div class="lrow"><span>Four nights, all-in</span><span>Thu Nov 19 through Mon Nov 23 checkout.</span><span>$960</span></div>
-
-   <div class="lgrp">The pass</div>
-   <div class="lrow"><span>Full pass <span class="k-est guess">EST</span></span><span>Real tiers are behind a login on Danceplace. Third-party listing quotes around $220.</span><span>$220</span></div>
-   <div class="lrow"><span>Late-tier risk <span class="k-est guess">EST</span></span><span>Hawaii went $175 team rate to $275 at the door. Assume the same climb.</span><span>+$30-100</span></div>
-   <div class="lrow"><span>Transfers, if plans change <span class="k-est known">KNOWN</span></span><span>No refunds, all sales final. Transfer allowed for a flat fee.</span><span>$30</span></div>
+   <div class="lrow"><span>Points earned back <span class="k-est known">KNOWN</span></span><span>5 per eligible dollar on room rate only. Waikiki paid 5,180 points on $1,036. Expect ~4,200 more and 4 Qualifying Nights.</span><span>+4,200</span></div>
 
    <div class="lgrp">On the ground</div>
    <div class="lrow"><span>Food, four days <span class="k-est guess">EST</span></span><span>Airport strip, not Waikiki. Fewer walkable options and a 7 AM finish.</span><span>$280</span></div>
-   <div class="lrow"><span>Rides and late-night <span class="k-est guess">EST</span></span><span>Getting to real food in downtown Burlingame or San Mateo.</span><span>$70</span></div>
+   <div class="lrow"><span>Rides and late-night <span class="k-est guess">EST</span></span><span>Getting to real food in downtown Burlingame.</span><span>$70</span></div>
 
-   <div class="lrow ltot"><span>Baseline, solo room</span><span></span><span>$1,740</span></div>
+   <div class="lrow ltot"><span>Baseline, solo room</span><span></span><span>$1,790</span></div>
   </div>
 
-  <p class="led-note rv">Two numbers are doing all the work here and both need a human with a browser. <b>Pass tiers</b> live behind the Danceplace cart, which wants a login before it shows a price. <b>The Hyatt group rate</b> sits behind the G-SF22 block link, and Hyatt blocks anything that is not a real browser. Open both, screenshot them, and the estimate becomes a budget.</p>
+  <p class="led-note rv">The pass came in <b>36% over my first guess</b>. I had $220. It is $300.31 once you add the Thursday pre-party, which is sold as its own ticket and is easy to miss. One number is still open: the <b>Hyatt group rate</b> behind block code G-SF22. Hyatt refuses anything that is not a real browser, so that one needs two minutes in Chrome.</p>
 
   <div class="total-card rv">
    <div class="k">Versus Waikiki</div>
-   <div class="v">$800 cheaper</div>
-   <div class="note">Hawaii landed at roughly $2,551 all-in. The solo-room version of this trip comes in around $1,740, and almost all of the gap is the flight and the resort fee. Two hours to SFO instead of six to Honolulu, a free airport shuttle instead of cabs, and an airport Hyatt that should carry no resort charge at all.</div>
+   <div class="v">$760 cheaper</div>
+   <div class="note">Hawaii landed at $2,551 all-in, and the folio confirms the hotel side exactly: $259 a night plus $60.33 of tax and resort fee, four nights, $1,277.32. This trip comes in around $1,790 for the same shape. The gap is the flight and the resort fee, not the pass. The pass is actually $125 more than the $175 team rate he paid for Hawaii.</div>
   </div>
 
   <div class="open rv">
    <div class="oh">Still open</div>
    <ol class="olist">
-    <li><b>Get the real pass tiers.</b> Danceplace listing 15818. Every number on this page is provisional until that screenshot exists.</li>
-    <li><b>Open the Hyatt block, code G-SF22.</b> Need the nightly rate, the cutoff date, and whether World of Hyatt points still earn on the group rate. They did at the Waikiki Hyatt.</li>
-    <li><b>Room share or solo.</b> A $480 swing. They run an official room-sharing page for exactly this.</li>
-    <li><b>Book the flight by mid-October.</b> Nov 23 is the Monday of Thanksgiving week, so fares that whole week sit above baseline and only move one way.</li>
-    <li><b>Decide on the Bachata J&amp;J.</b> Jack and jill, no partner needed. Cheapest honest read on where this room actually sits.</li>
+    <li><b>Buy the full pass before Sep 30.</b> $273.71 all-in. October is a different tier and a different price.</li>
+    <li><b>Add the Thursday pre-party, $26.60.</b> 10 PM to 3 AM, three rooms, and it is the first read the floor gets on you.</li>
+    <li><b>Open the Hyatt block, code G-SF22.</b> Need the nightly rate, the cutoff date, and whether the group rate earns points and Qualifying Nights.</li>
+    <li><b>Decide the World of Hyatt Chase card before booking.</b> It pays 9 points per dollar at Hyatt instead of 5, hands over 5 Qualifying Nights a year, and gives a Category 1-4 anniversary free night that would cover a night at this exact hotel.</li>
+    <li><b>Room share or solo.</b> A $480 swing.</li>
+    <li><b>Book the flight by mid-October.</b> Nov 23 is the Monday of Thanksgiving week and fares that week only move one way.</li>
    </ol>
   </div>
  </div>
@@ -509,114 +548,102 @@
  <div class="wrap">
   <div class="sec-head rv">
    <div>
-    <div class="idx">THE ARC</div>
-    <h2>Eight weeks.</h2>
+    <div class="idx">THE ENGINE</div>
+    <h2>It already runs.</h2>
    </div>
-   <p>Hawaii got six. This one gets eight, and it needs them.</p>
+   <p>Hawaii worked because of the weeks before it. Same engine, eight more weeks, higher bar.</p>
   </div>
-  <p class="brief-lead rv">Four days of straight dancing in Waikiki are done. The reps carried over. The problem is that the room in Burlingame is better, so the same level that felt comfortable on the beach is going to feel average on a floor of 2,500.</p>
+  <p class="brief-lead rv">Four days of straight dancing in Waikiki went fine, and none of that came from the four days. It came from a schedule that was already running every week. The curveballs, the unfamiliar follows, the styles he had not seen before, all of it was survivable because the reps were already banked.</p>
+
+  <div class="rule-card rv">
+   <div class="rule-n">4 + 3</div>
+   <div class="rule-t">
+    <b>Every weeknight is a class. Friday through Sunday is a social.</b>
+    <span>Four classes and three socials a week. No beginner classes, ever. No Sundays at the studio, because Sunday is ladies styling and heels and he leads. That is the whole system, and it does not need reinventing for this trip. It needs holding.</span>
+   </div>
+  </div>
+
+  <h3 class="arc-sub rv">The week</h3>
+  <div class="wkly rv">
+   <div class="wrow">
+    <div class="wd">MON</div>
+    <div class="wv">7:15 Bachata Footwork<br>8:00 Social Dance Confidence</div>
+    <div class="ww">Phoenix Bachata Dance Academy, 3302 N 3rd St. Both classes, open level. Locked.</div>
+   </div>
+   <div class="wrow">
+    <div class="wd">TUE</div>
+    <div class="wv">8:00 Intermediate Salsa</div>
+    <div class="ww">Cavallo Dance. Salsa has no other home in the week. Sotol runs a social after if there is anything left in the legs.</div>
+   </div>
+   <div class="wrow">
+    <div class="wd">WED</div>
+    <div class="wv">7:00 Team Training<br>8:00 Rueda<br>8:45 Social</div>
+    <div class="ww">Modern Bachata Fusion Season 4 at PBD, then the rueda class, then the Latin Fusion Social straight after. The longest night of the week and the most useful.</div>
+   </div>
+   <div class="wrow">
+    <div class="wd">THU</div>
+    <div class="wv">8:00 Advanced Salsa<br><i>or</i> 8:00 Advanced Bachata</div>
+    <div class="ww">The swing night. Cavallo advanced salsa against PBD advanced bachata footwork and partner work. Both at 8. Pick one.</div>
+   </div>
+   <div class="wrow">
+    <div class="wd">FRI</div>
+    <div class="wv">Social</div>
+    <div class="ww">Phoenix Bachata &amp; Salsa Night Deluxe at Provision 711 on the third Friday. Otherwise Diablo Rooftop or Taco Guild with Con Clave, or El Pacifico Mesa where Adrian Garza teaches salsa at 9:30 and the floor opens at 10:30.</div>
+   </div>
+   <div class="wrow">
+    <div class="wd">SAT</div>
+    <div class="wv">Social</div>
+    <div class="ww">Bachata Addiction monthly on the Dave &amp; Buster's rooftop, or Que Chimba with Con Clave. Sep 19 is Que Chimba at Dink &amp; Dine, Adrian &amp; Indira teaching, $10.</div>
+   </div>
+   <div class="wrow">
+    <div class="wd">SUN</div>
+    <div class="wv">Social</div>
+    <div class="ww">Havana Nights with Brenda Smith at Dave &amp; Buster's Tempe. No studio on Sundays.</div>
+   </div>
+  </div>
+
+  <h3 class="arc-sub rv">The one real decision</h3>
+  <div class="versus rv">
+   <div class="vs-col">
+    <div class="vs-h">Cavallo Dance</div>
+    <div class="vs-line"><b>TUE 8 PM</b> Intermediate Salsa</div>
+    <div class="vs-line"><b>THU 8 PM</b> Advanced Salsa</div>
+    <div class="vs-note">Punch card is 10 for $180, so $18 a lesson. That is the cheapest instruction in the week by a distance. <b>Ninth punch went in Tue Sep 15. One left.</b></div>
+   </div>
+   <div class="vs-mid">vs</div>
+   <div class="vs-col">
+    <div class="vs-h">Phoenix Bachata Academy</div>
+    <div class="vs-line"><b>TUE 8 PM</b> Bachata Footwork, Intermediate<br><span>9:30 Partner Work, Intermediate</span></div>
+    <div class="vs-line"><b>THU 8 PM</b> Bachata Footwork, Advanced<br><span>9:30 Partner Work, Advanced</span></div>
+    <div class="vs-note">Thursday is the only <b>advanced</b> bachata partner work all week. Monday is open level and Wednesday is routine drilling, not social leading.</div>
+   </div>
+  </div>
+  <div class="verdict rv">
+   <p><b>Tuesday goes to Cavallo, every time.</b> Every other night in the week is bachata in some form, and SBK runs four rooms where two of them lean salsa. A 6-8 floor will not carry a weak salsa lead.</p>
+   <p><b>Thursday alternates.</b> Cavallo advanced salsa on weeks the routine is under control, PBD advanced bachata on the weeks it is not. And rebuy the punch card, because one punch covers this Thursday and then it is gone.</p>
+  </div>
+
+  <h3 class="arc-sub rv">Between here and Burlingame</h3>
+  <div class="rail rv">
+   <div class="ri"><div class="rd">Fri Sep 18</div><div class="rc"><b>Phoenix Bachata &amp; Salsa Night Deluxe</b>Provision 711. Guest DJ Basico out of San Diego. Lawrence &amp; Jewel teaching salsa 9 to 10, social 10 PM to 2 AM. They are also on the SBK lineup in November.</div></div>
+   <div class="ri"><div class="rd">Sat Sep 19</div><div class="rc"><b>Certification Level 1 with Antoni &amp; Belen</b>1 to 6 PM at PBD. Bachata world champions. Traditional, fusion and urban.</div></div>
+   <div class="ri"><div class="rd">Sat Sep 19</div><div class="rc"><b>Que Chimba Latin Night</b>Dink &amp; Dine Pickle Park, Mesa. Adrian &amp; Indira teaching at 9, dancing 10 to 2. $10, 21+.</div></div>
+   <div class="ri"><div class="rd">~Tue Oct 21</div><div class="rc"><b>Season 4 wraps</b>Eight weeks from Sep 2. The Jezebel routine should be on its feet by here.</div></div>
+   <div class="ri"><div class="rd">Sat Oct 17</div><div class="rc"><b>Certification Level 2 with Antoni &amp; Belen</b>1 to 6 PM. Urban bachata, sensual, bachazouk. Five hours with world champions is the closest thing to an SBK workshop block he can get without flying anywhere.</div></div>
+   <div class="ri"><div class="rd">Fri Oct 30</div><div class="rc"><b>Halloween Night Deluxe</b>Provision 711. Costume contest, classes at 9, social 10 to 2.</div></div>
+   <div class="ri"><div class="rd">Thu Nov 13</div><div class="rc"><b>Modern Bachata Fusion Weekend</b>PBD. Most likely where the Season 4 routine actually shows. Six days before wheels up.</div></div>
+   <div class="ri last"><div class="rd">Thu Nov 19</div><div class="rc"><b>PHX to SFO</b>Shuttle, check in, and the pre-party at 10 PM.</div></div>
+  </div>
 
   <div class="bar-call rv">
-   <p><b>Carlitos put a number on it.</b> He rated the Hawaii floor at 5 to 7. He rates this one 6 to 8. One point does not sound like much until you are the weakest lead in a line of four. The ceiling is higher here, which means the good followers are better, the songs go longer, and nothing gets carried by the vibe.</p>
-  </div>
-
-  <div class="weeks">
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 1</b><span class="dates">Sep 21-27</span></div>
-    <h4>Reset the base</h4>
-    <div class="split">
-     <div><div class="disc s">Salsa</div><ul><li>Basic, cross body, right turn, clean and slow</li><li>Find the 1 in unfamiliar tracks</li></ul></div>
-     <div><div class="disc b">Bachata</div><ul><li>Weight change and hip, no arms</li><li>Basic to side step, no bounce</li></ul></div>
-    </div>
-    <div class="drill"><b>Private with Leela, Sep 25.</b> Bring one question, not five. Ask her what breaks first when you get tired.</div>
-   </div>
-
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 2</b><span class="dates">Sep 28 - Oct 4</span></div>
-    <h4>Lead clarity</h4>
-    <div class="split">
-     <div><div class="disc s">Salsa</div><ul><li>Frame tension, same pressure every rep</li><li>Cross body with inside turn</li></ul></div>
-     <div><div class="disc b">Bachata</div><ul><li>Lead the turn from the body, not the hand</li><li>Traditional footwork at speed</li></ul></div>
-    </div>
-    <div class="drill"><b>Drill:</b> One social. Dance only with people better than you, and count how many times you had to fix a lead mid-move.</div>
-   </div>
-
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 3</b><span class="dates">Oct 5-11</span></div>
-    <h4>Add the second style back</h4>
-    <div class="split">
-     <div><div class="disc s">Salsa</div><ul><li>Shines, four counts, repeatable</li><li>Hammerlock chain</li></ul></div>
-     <div><div class="disc b">Bachata</div><ul><li>Sensual: body wave into a turn</li><li>Two combos, banked</li></ul></div>
-    </div>
-    <div class="drill"><b>Drill:</b> Record one song of each. Watch it back on mute. If the shape does not read without music, it does not read on the floor.</div>
-   </div>
-
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 4</b><span class="dates">Oct 12-18</span></div>
-    <h4>Musicality</h4>
-    <div class="split">
-     <div><div class="disc s">Salsa</div><ul><li>Hit the break, do not just keep stepping</li><li>Pause on purpose, then move</li></ul></div>
-     <div><div class="disc b">Bachata</div><ul><li>Mambo section accents</li><li>Slow down to half time and hold it</li></ul></div>
-    </div>
-    <div class="drill"><b>Private with Leela.</b> Bring the muted video from week 3. Let her pick what to cut.</div>
-   </div>
-
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 5</b><span class="dates">Oct 19-25</span></div>
-    <h4>Stamina</h4>
-    <div class="split">
-     <div><div class="disc s">Salsa</div><ul><li>Three songs back to back, no sitting</li><li>Keep the frame in song three</li></ul></div>
-     <div><div class="disc b">Bachata</div><ul><li>Same, and watch the shoulders drop</li></ul></div>
-    </div>
-    <div class="drill"><b>Reality check:</b> the floor at SBK runs to 7 AM. Four days of it. If you gas out in song three at a Tuesday social, you will not last a night there.</div>
-   </div>
-
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 6</b><span class="dates">Oct 26 - Nov 1</span></div>
-    <h4>Kizomba and zouk, at least the basics</h4>
-    <div class="split">
-     <div><div class="disc s">New</div><ul><li>Kizomba walk and saida</li><li>Zouk basic and head movement, follow side too</li></ul></div>
-     <div><div class="disc b">Keep</div><ul><li>Salsa and bachata combos stay warm</li></ul></div>
-    </div>
-    <div class="drill"><b>Why bother:</b> two of the four rooms are kizomba and zouk. Walking in with zero means paying for a pass you only half use.</div>
-   </div>
-
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 7</b><span class="dates">Nov 2-8</span></div>
-    <h4>Pressure test</h4>
-    <div class="split">
-     <div><div class="disc s">Salsa</div><ul><li>Freestyle to unknown tracks only</li><li>No rehearsed openers</li></ul></div>
-     <div><div class="disc b">Bachata</div><ul><li>Dance with strangers, not the regulars</li><li>Ask for one correction per dance</li></ul></div>
-    </div>
-    <div class="drill"><b>Private with Leela.</b> Last one where new material is allowed. After this it is polish only.</div>
-   </div>
-
-   <div class="wk rv">
-    <div class="wn"><b>WEEK 8</b><span class="dates">Nov 9-15</span></div>
-    <h4>Polish, no new material</h4>
-    <div class="split">
-     <div><div class="disc s">Salsa</div><ul><li>The two combos that actually land, clean</li><li>Exits, so every move ends somewhere</li></ul></div>
-     <div><div class="disc b">Bachata</div><ul><li>One sensual combo, one traditional, both boring-clean</li></ul></div>
-    </div>
-    <div class="drill"><b>Drill:</b> run them until they are dull. Dull is the point. Dull survives a 2 AM floor when you cannot think.</div>
-   </div>
-
-   <div class="wk peak rv">
-    <div class="wn"><b>PEAK WEEK</b><span class="dates">Nov 16-18</span></div>
-    <h4>Sharpen, rest, pack</h4>
-    <div class="split">
-     <div><div class="disc s">Do</div><ul><li>One easy social, low pressure</li><li>Stretch, sleep, hydrate</li><li>Pack Tuesday so Wednesday is free</li></ul></div>
-     <div><div class="disc b">Don't</div><ul><li>No new combos</li><li>No late nights</li><li>No panic practice</li></ul></div>
-    </div>
-    <div class="drill"><b>Land loose.</b> The Thursday pre-party runs 10 PM to 3 AM and it is the first read the room gets on you. Arrive warm, not wrecked.</div>
-   </div>
+   <p><b>Carlitos put a number on it.</b> He rated the Hawaii floor 5 to 7. He rates this one 6 to 8. One point does not sound like much until you are the weakest lead in a line of four. The ceiling is higher here, the good followers are better, and nothing gets carried by the vibe.</p>
   </div>
 
   <div class="cadence rv">
-   <div class="cad"><div class="n">45<span style="font-size:16px">m</span></div><div class="t">daily practice</div></div>
-   <div class="cad"><div class="n">2&times;</div><div class="t">socials per week</div></div>
-   <div class="cad"><div class="n">4</div><div class="t">privates with Leela</div></div>
-   <div class="cad"><div class="n">4</div><div class="t">styles to cover</div></div>
+   <div class="cad"><div class="n">4</div><div class="t">classes a week</div></div>
+   <div class="cad"><div class="n">3</div><div class="t">socials a week</div></div>
+   <div class="cad"><div class="n">8</div><div class="t">weeks left</div></div>
+   <div class="cad"><div class="n">4</div><div class="t">styles at SBK</div></div>
   </div>
  </div>
 </section>
