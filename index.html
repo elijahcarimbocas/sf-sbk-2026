@@ -257,7 +257,8 @@
  @media(max-width:600px){.conflict{padding-left:14px}}
  .conflict-h{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#a23a17;margin-bottom:16px}
  .rule-n span{vertical-align:6px;padding:0 4px}
- .fix-lead{font-size:14.5px;color:#4c5762;line-height:1.7;max-width:760px;margin:18px 0 26px}
+ .fix-lead{font-size:16px;color:#3c4453;line-height:1.72;max-width:none;margin:18px 0 28px;columns:2;column-gap:52px}
+ @media(max-width:860px){.fix-lead{columns:1;font-size:15px}}
  .fixgrp{font-family:var(--disp);font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin:26px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--paper2)}
  .fixes{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--paper2)}
  @media(max-width:860px){.fixes{grid-template-columns:1fr}}
@@ -266,7 +267,7 @@
  .fix .was,.fix .now{font-size:13.5px;line-height:1.6;padding:9px 0 9px 58px;position:relative}
  .fix .was{color:#7d8791;border-bottom:1px solid var(--paper)}
  .fix .now{color:#39424d}
- .fix .was span,.fix .now span{position:absolute;left:0;top:10px;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+ .fix .was span,.fix .now span{position:absolute;left:0;top:10px;max-width:52px;overflow:hidden;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
  .fix .was span{color:#b0b8c1}
  .fix .now span{color:var(--orange)}
  .fix .now b{color:#a23a17}
@@ -274,8 +275,8 @@
  .fix i{font-style:italic}
  .fix.taught{border-left:3px solid var(--orange)}
  .fix.taught .now{border-bottom:1px solid var(--paper)}
- .fix .why{font-size:12.5px;line-height:1.6;padding:10px 0 2px 58px;position:relative;color:#5a6570}
- .fix .why span{position:absolute;left:0;top:11px;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b0b8c1}
+ .fix .why{font-size:12.5px;line-height:1.6;padding:12px 0 2px;color:#5a6570}
+ .fix .why span{display:block;margin-bottom:5px;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b0b8c1}
 
  .tally{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--paper2);margin:8px 0 30px;max-width:560px}
  .ty{background:#fff;padding:16px 18px}
@@ -293,6 +294,12 @@
  .drill-k{font-family:var(--disp);font-weight:800;font-size:22px;color:#fff;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px}
  .drill-card p{font-size:14.5px;line-height:1.75}
  .drill-card b{color:#fff}
+ .combo{list-style:none;counter-reset:cb;margin-top:8px;display:grid;gap:0}
+ .combo li{counter-increment:cb;position:relative;padding:7px 0 7px 30px;border-top:1px solid var(--paper);font-size:13px;color:#39424d;line-height:1.45}
+ .combo li:first-child{border-top:0}
+ .combo li::before{content:counter(cb);position:absolute;left:0;top:8px;font-family:var(--disp);font-weight:800;font-size:12px;color:#b0b8c1;letter-spacing:.06em}
+ .combo li.hit{background:rgba(226,85,43,.08);padding-left:30px;margin:0 -10px;padding-right:10px;color:#a23a17;font-weight:600}
+ .combo li.hit::before{left:10px;color:var(--orange)}
  .rail{border-left:1px solid var(--paper2);margin-left:6px}
  .ri{display:grid;grid-template-columns:132px 1fr;gap:22px;padding:0 0 26px 26px;position:relative}
  .ri::before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;background:var(--paper);border:1px solid var(--orange)}
@@ -482,7 +489,7 @@
    <div class="lrow"><span>Wednesday pre-party <span class="k-est known">KNOWN</span></span><span>Offsite, 9 PM workshop then 10 PM-1 AM social, class included. Door only, cash or Venmo or PayPal. Not sold on Danceplace. The real cost is the extra hotel night behind it.</span><span>$15</span></div>
    <div class="lrow"><span>Bootcamp, Karel Flores, 10 hrs <span class="k-est known">KNOWN</span></span><span>Under $16 an hour. Best value on the menu. Needs the full pass first.</span><span>$158.04</span></div>
    <div class="lrow"><span>Bachata Social Competition <span class="k-est known">KNOWN</span></span><span>Full or performance pass required.</span><span>$42.38</span></div>
-   <div class="lrow"><span>Three day passes instead <span class="k-est known">KNOWN</span></span><span>Fri $147.53, Sat $179.07, Sun $158.04. Only worth it if you fly in for one night.</span><span>$484.64</span></div>
+   <div class="lrow"><span>Three day passes instead <span class="k-est known">KNOWN</span></span><span>Fri $147.53, Sat $179.07, Sun $158.04. Only worth it if I fly in for one night.</span><span>$484.64</span></div>
 
    <div class="lgrp">Getting there</div>
    <div class="lrow"><span>PHX to SFO roundtrip <span class="k-est guess">EST</span></span><span>Nonstop on Southwest, American, Alaska, United. ~2h10m.</span><span>$180</span></div>
@@ -500,7 +507,7 @@
    <div class="lrow ltot"><span>Baseline, solo room</span><span></span><span>$1,790</span></div>
   </div>
 
-  <p class="led-note rv">The pass came in <b>36% over my first guess</b>. I had $220. It is $300.31 once you add the Thursday pre-party, which is sold as its own ticket and is easy to miss. One number is still open: the <b>Hyatt group rate</b> behind block code G-SF22. Hyatt refuses anything that is not a real browser, so that one needs two minutes in Chrome.</p>
+  <p class="led-note rv">The pass came in <b>36% over my first guess</b>. I had $220. It is $300.31 once I add the Thursday pre-party, which is sold as its own ticket and is easy to miss. One number is still open: the <b>Hyatt group rate</b> behind block code G-SF22. Hyatt refuses anything that is not a real browser, so that one needs two minutes in Chrome.</p>
 
   <div class="total-card rv">
    <div class="k">Versus Waikiki</div>
@@ -514,7 +521,7 @@
     <li><b>Buy the full pass before Oct 1.</b> $273.71 all-in. They announced the increase themselves on Sep 15, so the date is theirs.</li>
     <li><b>DM Phoenix Bachata Academy for the discount first.</b> Carlitos and Cece posted it on the congress account on Sep 8: "DM Phoenix Bachata Academy and we'll help you get discounted tickets for the congress." A standing public offer, so it is not a favour to ask for. Do this before paying full price.</li>
     <li><b>Ask what a Performance Pass costs.</b> The cart names it twice as valid for competing but never sells it, which means it moves through teams and directors.</li>
-    <li><b>Add the Thursday pre-party, $26.60.</b> 10 PM to 3 AM, three rooms, and it is the first read the floor gets on you.</li>
+    <li><b>Add the Thursday pre-party, $26.60.</b> 10 PM to 3 AM, three rooms, and it is the first read the floor gets on me.</li>
     <li><b>Open the Hyatt block, code G-SF22.</b> Need the nightly rate, the cutoff date, and whether the group rate earns points and Qualifying Nights.</li>
     <li><b>Decide the World of Hyatt Chase card before booking.</b> It pays 9 points per dollar at Hyatt instead of 5, hands over 5 Qualifying Nights a year, and gives a Category 1-4 anniversary free night that would cover a night at this exact hotel.</li>
     <li><b>Room share or solo.</b> A $480 swing.</li>
@@ -536,11 +543,11 @@
   <div class="mapx rv">
    <div class="mhead">
     <h3>Hyatt Regency San Francisco Airport</h3>
-    <p>1333 Old Bayshore Hwy, Burlingame, CA 94010. Hotel and venue are the same building, so there is no commute once you land. Downtown San Francisco is a 25 to 40 minute drive north, which matters only if I take a day off, and I will not.</p>
+    <p>1333 Old Bayshore Hwy, Burlingame, CA 94010. Hotel and venue are the same building, so there is no commute once I land. Downtown San Francisco is a 25 to 40 minute drive north, which matters only if I take a day off, and I will not.</p>
    </div>
    <div id="map" role="img" aria-label="Map of SFO airport, the Hyatt Regency in Burlingame, and downtown San Francisco"></div>
    <div class="mlegend">
-    <div class="mleg"><div class="mdot home"></div><div><b>Hyatt Regency SFO</b>Your room, four ballrooms, every workshop and every social.</div></div>
+    <div class="mleg"><div class="mdot home"></div><div><b>Hyatt Regency SFO</b>My room, four ballrooms, every workshop and every social.</div></div>
     <div class="mleg"><div class="mdot air"></div><div><b>SFO</b>Four miles. Free hotel shuttle, 24 hours, every 15 to 20 minutes.</div></div>
     <div class="mleg"><div class="mdot city"></div><div><b>Downtown San Francisco</b>About 15 miles north. Not walking distance to anything at the congress.</div></div>
     <div class="mleg"><div class="mdot home"></div><div><b>Downtown Burlingame</b>A mile and a half west. Where the real food is.</div></div>
@@ -562,7 +569,7 @@
    <div>
     <h2>Five days.<br>Two optional.</h2>
    </div>
-   <p>Shape is confirmed. Exact times move, so check their sheet before you fly.</p>
+   <p>Shape is confirmed. Exact times move, so check their sheet before I fly.</p>
   </div>
   <div class="tl">
    <div class="day rv">
@@ -643,7 +650,7 @@
     <div class="wrow">
      <div class="wd">MON</div>
      <div class="wv">7:15 Bachata Footwork<br>8:00 Social Dance Confidence</div>
-     <div class="ww">Phoenix Bachata Dance Academy, 3302 N 3rd St. Both, open level, locked. The 8:00 block is a Q&amp;A, and it is quietly the most valuable hour of the week because you walk in with a real problem off Saturday night. The follow read cuddle when you led shadow. That kind of thing gets answered.</div>
+     <div class="ww">Phoenix Bachata Dance Academy, 3302 N 3rd St. Both, open level, locked. The 8:00 block is a Q&amp;A, and it is quietly the most valuable hour of the week because I walk in with a real problem off Saturday night. The follow read cuddle when you led shadow. That kind of thing gets answered.</div>
     </div>
     <div class="wrow contest">
      <div class="wd">TUE</div>
@@ -730,7 +737,7 @@
    <div class="fixes">
     <div class="fix taught">
      <div class="fix-k">Pendulum weight transfer <i class="st done">Implemented</i></div>
-     <div class="now"><span>Taught</span><b>Sink down into the right hip.</b> Then drive the weight across, pushing that hip <b>as far as it will go, until you feel it in the obliques</b>. The rest of the body follows after. It arrives last, it does not lead.</div>
+     <div class="now"><span>Taught</span><b>Sink down into the right hip.</b> Then drive the weight across, pushing that hip <b>as far as it will go, until I feel it in the obliques</b>. The rest of the body follows after. It arrives last, it does not lead.</div>
      <div class="why"><span>Why it matters</span>This is the engine under two other items on the list. "Push, do not lift" and "ground up, not chest" are the same mechanism seen from different angles. And underneath the anatomy it is a timing instruction: hip first, body second.</div>
     </div>
     <div class="fix">
@@ -755,7 +762,8 @@
     <div class="fix">
      <div class="fix-k">Preps <i class="st done">Implemented</i></div>
      <div class="was"><span>Was</span>Prepping in the wrong direction, or prepping at the last second. Both kill clarity.</div>
-     <div class="now"><span>Now</span>Prep early, and prep the direction you actually mean. The purest timing fix on the list.</div>
+     <div class="now"><span>Now</span>Prep early, and prep the direction I actually mean. The purest timing fix on the list.</div>
+     <div class="why"><span>The forward-and-back prep, count by count</span>Sending her backwards: <b>prep on 2 and 3</b>, have her <b>wrist by 3 and 4</b>, <b>turn by 4</b>. Nothing in that instruction but counts, which is this whole section in one line.</div>
     </div>
     <div class="fix">
      <div class="fix-k">Right turn, both turning <i class="st done">Implemented</i></div>
@@ -817,7 +825,19 @@
     <div class="fix taught">
      <div class="fix-k">Same note, different room</div>
      <div class="now"><span>Leela</span><b>More contact with the follow, not less.</b> Word for word the thing Cece and Carlitos said in bachata, arrived at independently, in a different style, with a different teacher.</div>
-     <div class="why"><span>The combo</span>Half basic, lead right to follow's left, shoulder check, follow right turn, hair comb, lead left to follow's right hand, crossbody spin, <b>contact the shoulderblade on count 6</b>, crossbody.</div>
+     <div class="why"><span>The combo, in order</span>
+      <ol class="combo">
+       <li>Half basic</li>
+       <li>Lead right to follow's left</li>
+       <li>Shoulder check</li>
+       <li>Follow right turn</li>
+       <li>Hair comb</li>
+       <li>Lead left to follow's right hand</li>
+       <li>Crossbody spin</li>
+       <li class="hit">Contact the shoulderblade on <b>count 6</b></li>
+       <li>Crossbody</li>
+      </ol>
+     </div>
     </div>
     <div class="fix taught">
      <div class="fix-k">Why it is one note and not two</div>
@@ -845,7 +865,7 @@
    <div class="ri"><div class="rd">Sat Oct 17</div><div class="rc"><b>Certification Level 2 with Antoni &amp; Belen</b>1 to 6 PM. Urban bachata, sensual, bachazouk. New level, so this one costs. Closest thing to an SBK workshop block without flying anywhere, and it lands five weeks out.</div></div>
    <div class="ri"><div class="rd">Fri Oct 30</div><div class="rc"><b>Halloween Night Deluxe</b>Provision 711. Costume contest, classes at 9, social 10 to 2.</div></div>
    <div class="ri"><div class="rd">Thu Nov 13</div><div class="rc"><b>Modern Bachata Fusion Weekend</b>PBD, and it falls between week 11 and week 12. Most likely where the Season 4 routine actually shows.</div></div>
-   <div class="ri"><div class="rd">Wed Nov 18</div><div class="rc"><b>Season 4, week 12. The last one.</b>Twelve weeks from Sep 2 lands the final class on the Wednesday night before wheels up. The Jezebel routine peaks, then I sleep, then I fly.<br><br><b class="inl">Which kills the Wednesday option.</b> Flying in Nov 18 for SBK Pre-Party #1 costs you the season finale. Worth knowing before you price the five-night version.</div></div>
+   <div class="ri"><div class="rd">Wed Nov 18</div><div class="rc"><b>Season 4, week 12. The last one.</b>Twelve weeks from Sep 2 lands the final class on the Wednesday night before wheels up. The Jezebel routine peaks, then I sleep, then I fly.<br><br><b class="inl">Which kills the Wednesday option.</b> Flying in Nov 18 for SBK Pre-Party #1 costs me the season finale. Worth knowing before I price the five-night version.</div></div>
    <div class="ri last"><div class="rd">Thu Nov 19</div><div class="rc"><b>PHX to SFO</b>Shuttle, check in, and the pre-party at 10 PM.</div></div>
   </div>
 
@@ -920,7 +940,7 @@
   L.polyline([sfo, hyatt], {color:'#f0a03c', weight:2, opacity:.95, dashArray:'7 8'}).addTo(map);
   L.polyline([hyatt, city], {color:'#c9d2db', weight:2, opacity:.6, dashArray:'4 10'}).addTo(map);
   L.marker(hyatt, {icon:pin('#e2552b')}).addTo(map)
-   .bindPopup('<b>Hyatt Regency SFO</b><br>1333 Old Bayshore Hwy<br>Your room and all four ballrooms');
+   .bindPopup('<b>Hyatt Regency SFO</b><br>1333 Old Bayshore Hwy<br>My room and all four ballrooms');
   L.marker(sfo, {icon:pin('#f0a03c')}).addTo(map)
    .bindPopup('<b>SFO</b><br>4 miles out<br>Free hotel shuttle, 24/7, every 15-20 min');
   L.marker(city, {icon:pin('#c9d2db')}).addTo(map)
