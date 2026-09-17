@@ -214,8 +214,7 @@
  #arc .sec-head p{color:#5a6570}
  .brief-lead{max-width:680px;font-size:17px;color:#39424d;margin:-22px 0 24px;line-height:1.72}
  .bar-call{border-left:3px solid var(--orange);background:#fff;padding:24px 28px;margin-bottom:40px;max-width:none}
- .bar-call p{columns:2;column-gap:48px}
- @media(max-width:860px){.bar-call p{columns:1}}
+ .bar-call p{font-size:16px}
  .bar-call p{font-size:14.5px;color:#39424d;line-height:1.72}
  .bar-call b{color:#a23a17}
  .arc-sub{font-family:var(--disp);font-weight:800;font-size:30px;color:var(--ink2);margin:52px 0 18px;text-transform:uppercase;letter-spacing:.03em}
@@ -259,8 +258,8 @@
  @media(max-width:600px){.conflict{padding-left:14px}}
  .conflict-h{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#a23a17;margin-bottom:16px}
  .rule-n span{vertical-align:6px;padding:0 4px}
- .fix-lead{font-size:16px;color:#3c4453;line-height:1.72;max-width:none;margin:18px 0 28px;columns:2;column-gap:52px}
- @media(max-width:860px){.fix-lead{columns:1;font-size:15px}}
+ .fix-lead{font-size:18px;color:#3c4453;line-height:1.7;max-width:none;margin:18px 0 30px}
+ @media(max-width:860px){.fix-lead{font-size:16px}}
  .fixgrp{font-family:var(--disp);font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin:26px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--paper2)}
  .fixes{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--paper2)}
  @media(max-width:860px){.fixes{grid-template-columns:1fr}}
@@ -285,18 +284,17 @@
  .ty b{display:block;font-family:var(--disp);font-weight:900;font-size:40px;line-height:.9;color:#b0b8c1}
  .ty span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7d8791;margin-top:7px;font-weight:700}
  .ty.work b{color:var(--amber)}
- .ty.open b{color:var(--orange)}
- .ty.open span{color:var(--orange)}
+ .ty.still b{color:var(--orange)}
+ .ty.still span{color:var(--orange)}
  .st{flex:none;font-style:normal;font-family:var(--body);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;margin-left:10px}
  .st.done{background:var(--paper);color:#9aa4ae}
  .st.work{background:rgba(240,160,60,.18);color:#96641c}
- .st.open{background:var(--orange);color:#fff}
+ .st.still{background:var(--orange);color:#fff}
  .fix-k{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
  .fix-k .st{margin-top:2px}
  .drill-card{margin-top:30px;background:var(--ink2);color:var(--fog);padding:26px 28px;border-left:4px solid var(--orange)}
  .drill-k{font-family:var(--disp);font-weight:800;font-size:22px;color:#fff;text-transform:uppercase;letter-spacing:.04em;margin-bottom:12px}
- .drill-card p{font-size:14.5px;line-height:1.75;columns:2;column-gap:48px}
- @media(max-width:860px){.drill-card p{columns:1}}
+ .drill-card p{font-size:16px;line-height:1.75}
  .drill-card b{color:#fff}
  .combo{list-style:none;counter-reset:cb;margin-top:8px;display:grid;gap:0}
  .combo li{counter-increment:cb;position:relative;padding:7px 0 7px 30px;border-top:1px solid var(--paper);font-size:13px;color:#39424d;line-height:1.45}
@@ -729,12 +727,12 @@
 
   <div class="blk rv">
    <div class="blk-h"><span class="blk-n">4 privates, Cece &amp; Carlitos</span><h3 class="arc-sub">All of it was timing.</h3></div>
-   <p class="fix-lead">Cece said it outright after reading the brief: every single thing I had a problem with was a timing problem. Fourteen corrections came out of four privates and they all reduce to <b>when</b> something happens, or in what order. Leela reached the same verdict independently at Cavallo, in a different style, which is the section below the sensual block.</p>
+   <p class="fix-lead">Cece said it outright after reading the brief: every single thing I had a problem with was a timing problem. Fourteen corrections came out of four privates and they all reduce to <b>when</b> something happens, or in what order.</p>
 
    <div class="tally">
     <div class="ty done"><b>9</b><span>Implemented</span></div>
     <div class="ty work"><b>3</b><span>Getting there</span></div>
-    <div class="ty open"><b>2</b><span>Still open</span></div>
+    <div class="ty still"><b>2</b><span>Still open</span></div>
    </div>
 
    <div class="fixgrp">Footwork and weight</div>
@@ -778,9 +776,10 @@
      <div class="fix-k">Hand signals in footwork <i class="st done">Implemented</i></div>
      <div class="was"><span>Was</span>Wrong signal. On 1, 2, jump on 3, then 4 tapped with the foot in front of the left and vice versa, she had nothing clear to read.</div>
      <div class="now"><span>Now</span><b>Thumb into the middle of her palm.</b> That is the information. Same principle for an open-close, where the sliding foot is matched by the hand. Same for hips, both hands, up and down.</div>
+     <div class="why"><span>Saturday Sep 12, and I could hear it</span>A well-known AZ bachata teacher ran this at a social and called the count wrong. Open-close slide on the left foot across <b>1&amp;2</b>, then he labeled the next part <b>3&amp;4</b> when it was <b>3, 4</b>. Two weight changes, not three, so the ampersand promised a syncopation that was never there. He finished it with a body wave in open position, where there is no frame to send it through. Worth logging because six months ago I would have copied it. Now the wrong count is the first thing I notice.</div>
     </div>
     <div class="fix">
-     <div class="fix-k">The two-finger grip <i class="st open">Still open</i></div>
+     <div class="fix-k">The two-finger grip <i class="st still">Still open</i></div>
      <div class="was"><span>Was</span>Breaking the middle and ring finger spiderman grip while initiating a simple follow left turn on <b>count 5</b>, leaving her nothing to hold.</div>
      <div class="now"><span>Now</span>Hold it through the turn. She cannot follow a connection that disappears at the moment she needs it. <b>Not yet automatic.</b> One of two things left.</div>
     </div>
@@ -799,7 +798,7 @@
      <div class="now"><span>Now</span>Shoulders <b>straight and centered</b>, which is what keeps the basic travelling in a line with a follow on it. Close, not clean yet, and it needs attention while leading specifically.</div>
     </div>
     <div class="fix">
-     <div class="fix-k">Breaking the 1-8 <i class="st open">Still open</i></div>
+     <div class="fix-k">Breaking the 1-8 <i class="st still">Still open</i></div>
      <div class="was"><span>Was</span>Losing the direction after anything that interrupts a full 1-8.</div>
      <div class="now"><span>Now</span>After a half basic on 5-8, or an infinity in half-open for four counts, <b>keep going in the 5-8 direction</b>, to the right. <b>Still slips when I skip half a measure.</b> The other of the two.</div>
     </div>
@@ -825,7 +824,7 @@
     </div>
    </div>
 
-   <div class="fixgrp">Salsa, from Leela at Cavallo</div>
+   <div class="fixgrp">Salsa privates with Leela at Cavallo</div>
    <div class="fixes">
     <div class="fix taught">
      <div class="fix-k">Same note, different room</div>
@@ -857,7 +856,7 @@
    </div>
 
    <div class="bar-call" style="margin-top:26px">
-    <p><b>Four things left out of fourteen, and they are the same kind of thing.</b> The grip breaks at count 5 and the direction slips when a measure gets cut short. Both are failures of holding something steady while the count does something unexpected, which is the situation a 6-8 floor puts me in constantly. The other eleven are banked. These two get the eight weeks.</p>
+    <p><b>Five open, and three of them are one problem.</b> The grip breaks at count 5. The follow pulls back around 4 because nothing tells her the move is still running. The 1-8 direction slips when I cut a measure short. All three are my lead going quiet in the back half of the measure, which is what Cece and Leela each said separately in different words: more contact, on a count. The front half of my dancing is fine. The second half is where I stop talking.</p>
    </div>
   </div>
 
