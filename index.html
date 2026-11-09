@@ -38,7 +38,7 @@
  html{scroll-behavior:smooth}
  body{background:var(--ink);color:var(--white);font-family:var(--body);font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
  a{color:inherit;text-decoration:none}
- img{display:block;max-width:100%}
+ img{display:block;height:auto}
  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
  @media(max-width:600px){.wrap{padding:0 16px}}
  .eyebrow{font-family:var(--disp);font-size:15px;letter-spacing:.34em;text-transform:uppercase;color:var(--orange);font-weight:800}
@@ -66,11 +66,11 @@
  h1{font-family:var(--disp);font-weight:900;font-size:clamp(3.4rem,11vw,8.5rem);letter-spacing:.005em;line-height:.84;text-transform:uppercase}
  h1 .l2{color:var(--orange)}
  h1 .l3{-webkit-text-stroke:1.5px var(--fog);color:transparent}
- .lede{max-width:430px;color:var(--fog);font-size:15.5px;margin:24px 0 0;line-height:1.65}
+ .lede{color:var(--fog);font-size:15.5px;margin:24px 0 0;line-height:1.65}
  .script{display:inline-block;margin-top:14px;font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
 
  /* countdown strip */
- .count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:620px;margin-top:46px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(10,12,15,.42)}
+ .count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:46px;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);background:rgba(10,12,15,.42)}
  .count .box{padding:16px 10px 14px;text-align:center;border-right:1px solid var(--line)}
  .count .box:last-child{border-right:0}
  .count .num{font-family:var(--disp);font-weight:800;font-size:clamp(30px,6vw,46px);line-height:1;font-variant-numeric:tabular-nums}
@@ -82,13 +82,13 @@
  section{padding:88px 0;position:relative}
  section::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:var(--cable);opacity:.55}
  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:46px;flex-wrap:wrap}
- .sec-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(2.4rem,6vw,4.2rem);line-height:.92;text-transform:uppercase;letter-spacing:.005em;max-width:15ch}
- .sec-head p{color:var(--muted);max-width:380px;font-size:14.5px}
+ .sec-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(2.4rem,6vw,4.2rem);line-height:.92;text-transform:uppercase;letter-spacing:.005em}
+ .sec-head p{color:var(--muted);flex:1 1 280px;font-size:14.5px}
  .idx{font-family:var(--disp);font-weight:800;font-size:14px;color:var(--orange);letter-spacing:.3em;text-transform:uppercase;margin-bottom:10px}
 
  /* congress */
- .fest-lead{max-width:720px;color:var(--fog);font-size:17px;margin:0;line-height:1.72}
- .carlitos{border-left:3px solid var(--orange);background:rgba(226,85,43,.07);padding:20px 24px;margin-top:28px;max-width:820px}
+ .fest-lead{color:var(--fog);font-size:17px;margin:0;line-height:1.72}
+ .carlitos{border-left:3px solid var(--orange);background:rgba(226,85,43,.07);padding:20px 24px;margin-top:28px}
  .carlitos p{font-size:14.5px;color:var(--fog);line-height:1.7}
  .carlitos b{color:var(--white)}
  .chips{display:flex;flex-wrap:wrap;gap:0;margin-top:30px;border-top:1px solid var(--line)}
@@ -141,12 +141,12 @@
   .lrow span:last-child{grid-row:1;grid-column:2}
   .lhead{display:none}
  }
- .led-note{margin-top:22px;font-size:14px;color:var(--muted);max-width:740px;line-height:1.7}
+ .led-note{margin-top:22px;font-size:14px;color:var(--muted);line-height:1.7}
  .led-note b{color:var(--white)}
  .total-card{margin-top:40px;background:var(--orange);padding:36px 34px;color:#180500;border-left:6px solid #180500}
  .total-card .k{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.72}
  .total-card .v{font-family:var(--disp);font-weight:900;font-size:clamp(46px,9vw,72px);line-height:.92;margin:10px 0 10px;text-transform:uppercase}
- .total-card .note{font-size:13.5px;max-width:780px;line-height:1.65;opacity:.88}
+ .total-card .note{font-size:13.5px;line-height:1.65;opacity:.88}
 
  /* open items */
  .open{margin-top:46px;border-top:2px solid var(--orange);padding-top:24px}
@@ -160,7 +160,7 @@
  .mapx{border-top:2px solid var(--line2)}
  .mhead{padding:24px 0 22px}
  .mhead h3{font-family:var(--disp);font-weight:800;font-size:26px;margin-bottom:10px;text-transform:uppercase}
- .mhead p{font-size:14.5px;color:var(--muted);line-height:1.7;max-width:660px}
+ .mhead p{font-size:14.5px;color:var(--muted);line-height:1.7}
  #map{height:400px;width:100%;background:#0d1116;border-top:1px solid var(--line);border-bottom:1px solid var(--line);filter:saturate(.72) contrast(1.06)}
  @media(max-width:640px){#map{height:290px}}
  .mlegend{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;padding:4px 0 0}
@@ -178,6 +178,11 @@
  .mfact:first-child{border-left:0;padding-left:0}
  .mfact b{display:block;font-family:var(--disp);font-weight:800;font-size:30px;color:var(--orange);line-height:1}
  .mfact span{display:block;font-size:11px;color:var(--muted);margin-top:6px;line-height:1.4;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+ .land{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border-top:2px solid var(--line2)}
+ @media(max-width:760px){.land{grid-template-columns:1fr}}
+ .land div{background:var(--ink);padding:22px 22px 24px;font-size:14px;color:var(--fog);line-height:1.7}
+ .land b{display:block;font-family:var(--disp);font-weight:800;font-size:22px;color:var(--white);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px}
+ .land div:first-child b{color:var(--orange)}
  .leaflet-container{background:var(--steel)}
  .leaflet-popup-content-wrapper{background:var(--panel);color:var(--white);border:1px solid var(--line2)}
  .leaflet-popup-tip{background:var(--panel)}
@@ -203,8 +208,23 @@
  .day li em{font-style:normal;display:block;font-size:11.5px;color:var(--muted);margin-top:4px}
  .day.buffer{border-top-color:var(--amber)}
  .day.buffer .d{color:var(--amber)}
- .sched-note{margin-top:28px;font-size:13.5px;color:var(--muted);max-width:740px;line-height:1.7}
+ .sched-note{margin-top:28px;font-size:13.5px;color:var(--muted);line-height:1.7}
  .sched-note a{color:var(--orange);border-bottom:1px solid var(--orange)}
+ .day .grid-link{display:inline-block;margin-top:14px;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--orange)}
+ .sch-h{font-family:var(--disp);font-weight:800;font-size:28px;text-transform:uppercase;letter-spacing:.03em;margin:56px 0 18px}
+ .comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border-top:2px solid var(--orange)}
+ @media(max-width:640px){.comp{grid-template-columns:1fr}}
+ .comp div{background:var(--ink);padding:20px 20px 22px}
+ .comp b{display:block;font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.2em;color:var(--orange);text-transform:uppercase}
+ .comp strong{display:block;font-family:var(--disp);font-weight:800;font-size:26px;text-transform:uppercase;line-height:1;margin:8px 0 6px}
+ .comp span{font-size:12.5px;color:var(--muted)}
+ .dress{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line)}
+ @media(max-width:760px){.dress{grid-template-columns:repeat(2,minmax(0,1fr))}}
+ .dress a{display:block;background:var(--ink);transition:opacity .2s}
+ .dress a:hover{opacity:.86}
+ .dress img{width:100%;aspect-ratio:2/3;object-fit:cover}
+ .dress span{display:block;padding:12px 14px 16px;font-size:12.5px;color:var(--fog);line-height:1.45}
+ .dress span b{display:block;font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.2em;color:var(--orange);text-transform:uppercase;margin-bottom:3px}
 
  /* the engine, paper panel */
  #arc{background:var(--paper);color:var(--ink2)}
@@ -212,13 +232,13 @@
  #arc .idx{color:var(--orange)}
  #arc .sec-head h2{color:var(--ink2)}
  #arc .sec-head p{color:#5a6570}
- .brief-lead{max-width:680px;font-size:17px;color:#39424d;margin:-22px 0 24px;line-height:1.72}
- .bar-call{border-left:3px solid var(--orange);background:#fff;padding:24px 28px;margin-bottom:40px;max-width:none}
+ .brief-lead{font-size:17px;color:#39424d;margin:-22px 0 24px;line-height:1.72}
+ .bar-call{border-left:3px solid var(--orange);background:#fff;padding:24px 28px;margin-bottom:40px}
  .bar-call p{font-size:16px}
  .bar-call p{font-size:14.5px;color:#39424d;line-height:1.72}
  .bar-call b{color:#a23a17}
  .arc-sub{font-family:var(--disp);font-weight:800;font-size:30px;color:var(--ink2);margin:52px 0 18px;text-transform:uppercase;letter-spacing:.03em}
- .rule-card{display:flex;gap:28px;align-items:center;background:#fff;border-left:3px solid var(--orange);padding:26px 28px;max-width:880px;flex-wrap:wrap}
+ .rule-card{display:flex;gap:28px;align-items:center;background:#fff;border-left:3px solid var(--orange);padding:26px 28px;flex-wrap:wrap}
  .rule-n{font-family:var(--disp);font-weight:900;font-size:64px;color:var(--orange);line-height:.9}
  .rule-t{flex:1;min-width:260px}
  .rule-t b{display:block;font-size:16px;color:var(--ink2);margin-bottom:8px}
@@ -243,7 +263,7 @@
  .vs-note{margin-top:16px;font-size:12.5px;color:#4c5762;background:var(--paper);padding:13px 15px;line-height:1.6;border-left:2px solid var(--paper2)}
  .vs-note b{color:#a23a17}
  .vs-mid{display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:20px;color:#9aa4ae;text-transform:uppercase}
- .verdict{margin-top:20px;max-width:880px}
+ .verdict{margin-top:20px}
  .verdict p{font-size:14.5px;color:#39424d;line-height:1.75;margin-bottom:12px}
  .verdict b{color:#a23a17}
 
@@ -258,7 +278,7 @@
  @media(max-width:600px){.conflict{padding-left:14px}}
  .conflict-h{font-family:var(--disp);font-weight:800;font-size:15px;letter-spacing:.22em;text-transform:uppercase;color:#a23a17;margin-bottom:16px}
  .rule-n span{vertical-align:6px;padding:0 4px}
- .fix-lead{font-size:18px;color:#3c4453;line-height:1.7;max-width:none;margin:18px 0 30px}
+ .fix-lead{font-size:18px;color:#3c4453;line-height:1.7;margin:18px 0 30px}
  @media(max-width:860px){.fix-lead{font-size:16px}}
  .fixgrp{font-family:var(--disp);font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin:26px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--paper2)}
  .fixes{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--paper2)}
@@ -268,7 +288,7 @@
  .fix .was,.fix .now{font-size:13.5px;line-height:1.6;padding:9px 0 9px 58px;position:relative}
  .fix .was{color:#7d8791;border-bottom:1px solid var(--paper)}
  .fix .now{color:#39424d}
- .fix .was span,.fix .now span{position:absolute;left:0;top:10px;max-width:52px;overflow:hidden;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+ .fix .was span,.fix .now span{position:absolute;left:0;top:10px;width:52px;overflow:hidden;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
  .fix .was span{color:#b0b8c1}
  .fix .now span{color:var(--orange)}
  .fix .now b{color:#a23a17}
@@ -279,7 +299,7 @@
  .fix .why{font-size:12.5px;line-height:1.6;padding:12px 0 2px;color:#5a6570}
  .fix .why span{display:block;margin-bottom:5px;font-family:var(--disp);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b0b8c1}
 
- .tally{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--paper2);margin:8px 0 30px;max-width:560px}
+ .tally{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--paper2);margin:8px 0 30px}
  .ty{background:#fff;padding:16px 18px}
  .ty b{display:block;font-family:var(--disp);font-weight:900;font-size:40px;line-height:.9;color:#b0b8c1}
  .ty span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7d8791;margin-top:7px;font-weight:700}
@@ -401,13 +421,13 @@
   </div>
   <p class="fest-lead rv">Salsa, bachata, kizomba and Brazilian zouk, all under one roof at the Hyatt Regency SFO. Workshops from 10 AM, afternoon socials, shows every night, and the floor stays open until roughly 7 in the morning. Artists and DJs fly in from Europe, Asia and Latin America. Three competitions run alongside it.</p>
   <div class="carlitos rv">
-   <p><b>The man who rated the room is teaching in it.</b> Carlitos and Cece are on the SBK bill with Modern Bachata Fusion and Rides &amp; Counterbalances. He taught the same Rides and Contra Balances workshop in Waikiki, and Modern Bachata Fusion is the exact name of the Season 4 team season running at Phoenix Bachata right now. He has taught both floors, so the 6-8 is a real read.</p>
+   <p><b>The man who rated the room is teaching in it.</b> Carlitos and Cece have two slots, both in Grand Ballroom C. Friday at 3 PM it's Urban Bachata Social Combo, and Sunday at 10 AM it's Bachata Sensual Partnerwork. He taught in Waikiki too, so he's seen both floors and the 6-8 is a real read.</p>
   </div>
   <div class="chips rv">
-   <span class="chip">Carlitos &amp; Cece &middot; Modern Bachata Fusion</span>
+   <span class="chip">Carlitos &amp; Cece &middot; Fri 3 PM, Sun 10 AM</span>
    <span class="chip">Karel Flores &middot; 10-hour bootcamp</span>
    <span class="chip">Salsanama &middot; Tropical Gem, 2nd year</span>
-   <span class="chip">Bachata J&amp;J &middot; Innesence Dance Company</span>
+   <span class="chip">Bachata Ultimate Showdown &middot; Sunday</span>
    <span class="chip">Two zouk competitions</span>
    <span class="chip">Mambo Alo Ayala &middot; 8th time back</span>
    <span class="chip">Wednesday and Thursday pre-parties</span>
@@ -434,8 +454,8 @@
   </div>
 
   <div class="deadline rv">
-   <b>Prices increase October 1st.</b>
-   <span>Their own words, posted Sep 15. The full pass is $273.71 all-in at the September tier and October has its own number. This is the only hard deadline on the whole trip, and it is 15 days out.</span>
+   <b>Online sales end Sunday, Nov 15.</b>
+   <span>Straight off their flyer. That's four days before I fly. After that it's their WhatsApp, 415-794-2007.</span>
   </div>
 
   <div class="scen">
@@ -520,10 +540,10 @@
   <div class="open rv">
    <div class="oh">Still open</div>
    <ol class="olist">
-    <li><b>Buy the full pass before Oct 1.</b> $273.71 all-in. They announced the increase themselves on Sep 15, so the date is theirs.</li>
+    <li><b>Buy the full pass before online sales close Sun Nov 15.</b> The September tier was $273.71 all-in, and prices went up Oct 1.</li>
     <li><b>DM Phoenix Bachata Academy for the discount first.</b> Carlitos and Cece posted it on the congress account on Sep 8: "DM Phoenix Bachata Academy and we'll help you get discounted tickets for the congress." A standing public offer, so it is not a favour to ask for. Do this before paying full price.</li>
     <li><b>Ask what a Performance Pass costs.</b> The cart names it twice as valid for competing but never sells it, which means it moves through teams and directors.</li>
-    <li><b>Add the Thursday pre-party, $26.60.</b> 10 PM to 3 AM, three rooms, and it is the first read the floor gets on me.</li>
+    <li><b>Add the Thursday pre-party, $26.60.</b> Doors at 9 PM, three rooms, and it's the first read the floor gets on me.</li>
     <li><b>Open the Hyatt block, code G-SF22.</b> Need the nightly rate, the cutoff date, and whether the group rate earns points and Qualifying Nights.</li>
     <li><b>Decide the World of Hyatt Chase card before booking.</b> It pays 9 points per dollar at Hyatt instead of 5, hands over 5 Qualifying Nights a year, and gives a Category 1-4 anniversary free night that would cover a night at this exact hotel.</li>
     <li><b>Room share or solo.</b> A $480 swing.</li>
@@ -561,6 +581,11 @@
     <div class="mfact"><b>4</b><span>rooms running at once</span></div>
    </div>
   </div>
+  <h3 class="sch-h rv">Landing at SFO</h3>
+  <div class="land rv">
+   <div><b>Free shuttle</b>Bag first, then up to Departures/Ticketing and follow the Hotel Courtesy Shuttle signs to the center island. The van says Hyatt Regency / Marriott, and I tell the driver Hyatt Regency. If I can't find it, I call the hotel at (650) 347-1234.</div>
+   <div><b>Uber or Lyft</b>Put in Hyatt Regency San Francisco Airport, 1333 Bayshore Highway, Burlingame. From terminals 1 to 3 the pickup is Level 5 of the Domestic Garage. The app shows the exact spot.</div>
+  </div>
  </div>
 </section>
 
@@ -571,7 +596,7 @@
    <div>
     <h2>Five days.<br>Two optional.</h2>
    </div>
-   <p>Shape is confirmed. Exact times move, so check their sheet before I fly.</p>
+   <p>Times come from their latest workshop grids and flyers. They still move, so check the sheet before I fly.</p>
   </div>
   <div class="tl">
    <div class="day rv">
@@ -587,42 +612,70 @@
     <div class="d">THU</div>
     <div class="dt">Nov 19</div>
     <ul>
-     <li>Fly PHX to SFO<em>Shuttle to the hotel, check in</em></li>
-     <li>Pre-Party #2, at the hotel<em>Salsa in Regency, bachata in Grand AB, zouk in Grand C</em></li>
-     <li>Zouk workshop 9 PM, open level<em>DJs until 2:30 AM</em></li>
+     <li>Fly PHX to SFO<em>Free shuttle to the hotel, drop the bag</em></li>
+     <li>Congress check-in, 9 PM<em>Bring ID and the receipt</em></li>
+     <li>Pre-Party #2, doors 9 PM<em>Salsa in Regency, bachata in Grand AB, zouk in Grand C. DJs until 2:30 AM.</em></li>
+     <li>Zouk workshop 9 PM, open level</li>
     </ul>
    </div>
    <div class="day rv">
     <div class="d">FRI</div>
     <div class="dt">Nov 20</div>
     <ul>
-     <li>Workshops from 10 AM</li>
-     <li>Afternoon social</li>
-     <li>Shows</li>
-     <li>Dancing until ~7 AM</li>
+     <li>Workshops 11 AM to 6 PM</li>
+     <li>Carlitos &amp; Cece, 3 PM<em>Urban Bachata Social Combo, Grand Ballroom C</em></li>
+     <li>Zouk Battle, 2 to 5 PM<em>Regency Ballroom</em></li>
+     <li>Afternoon socials, 5 to 8 PM<em>Bachata in Grand C, salsa in Grand AB</em></li>
+     <li>Shows, 7 PM to midnight<em>Grand Ballroom DEFG</em></li>
+     <li>Night dancing from 11 PM<em>Until about 7 AM</em></li>
     </ul>
+    <a class="grid-link" href="assets/sbk/fri-grid.jpg" target="_blank" rel="noopener">Friday grid</a>
    </div>
    <div class="day rv">
     <div class="d">SAT</div>
     <div class="dt">Nov 21</div>
     <ul>
-     <li>Workshops</li>
-     <li>Salsanama + Bachata J&amp;J<em>Competition day</em></li>
-     <li>Shows</li>
-     <li>Dancing until ~7 AM</li>
+     <li>Workshops 10 AM to 6 PM</li>
+     <li>Salsanama, 2 to 5 PM<em>Regency Ballroom</em></li>
+     <li>Afternoon socials, 5 to 8 PM<em>Bachata in Grand C, salsa in Grand AB</em></li>
+     <li>Shows<em>Evening, time not posted yet</em></li>
+     <li>Night dancing from 11 PM<em>Until about 7 AM</em></li>
     </ul>
+    <a class="grid-link" href="assets/sbk/sat-grid.jpg" target="_blank" rel="noopener">Saturday grid</a>
    </div>
    <div class="day rv buffer">
     <div class="d">SUN &rarr; MON</div>
     <div class="dt">Nov 22-23</div>
     <ul>
-     <li>Final workshops</li>
-     <li>Closing night</li>
+     <li>Workshops 10 AM to 6 PM</li>
+     <li>Carlitos &amp; Cece, 10 AM<em>Bachata Sensual Partnerwork, Grand Ballroom C</em></li>
+     <li>Bachata Showdown, 2 to 5 PM<em>Regency Ballroom</em></li>
+     <li>Afternoon socials, 5 to 8 PM</li>
+     <li>Zouk J&amp;J, 7 to 9 PM<em>Regency Ballroom</em></li>
+     <li>Closing night<em>Dancing from 11 PM</em></li>
      <li>Mon: fly home<em>Book the afternoon. Sunday runs to 7 AM and checkout is 11.</em></li>
     </ul>
+    <a class="grid-link" href="assets/sbk/sun-grid.jpg" target="_blank" rel="noopener">Sunday grid</a>
    </div>
   </div>
-  <p class="sched-note rv">Their General Program page points at a live Google Sheet as the source of truth, and it says outright to check that link when in doubt. Times above are the published shape and they will move. <a href="https://sfsbkcongress.dance/general-program" target="_blank" rel="noopener">General Program</a></p>
+
+  <h3 class="sch-h rv">Three competitions, 2 to 5 PM</h3>
+  <div class="comp rv">
+   <div><b>Fri</b><strong>Zouk Battle</strong><span>Regency Ballroom</span></div>
+   <div><b>Sat</b><strong>Salsanama</strong><span>Regency Ballroom</span></div>
+   <div><b>Sun</b><strong>Bachata Ultimate Showdown</strong><span>Regency Ballroom</span></div>
+  </div>
+  <p class="sched-note rv">Open level, all three, and each one needs at least 40 entries. First place pays $1,000, second $500, third $300, and all three places get a 2027 full pass.</p>
+
+  <h3 class="sch-h rv">Dress code by night</h3>
+  <div class="dress rv">
+   <a href="assets/sbk/thu-dress.jpg" target="_blank" rel="noopener"><img src="assets/sbk/thu-dress.jpg" width="1024" height="1536" loading="lazy" alt="Thursday night dress code poster: casual chic"><span><b>Thu</b>Casual chic</span></a>
+   <a href="assets/sbk/fri-dress.jpg" target="_blank" rel="noopener"><img src="assets/sbk/fri-dress.jpg" width="1024" height="1535" loading="lazy" alt="Friday night dress code poster: white, champagne and roses"><span><b>Fri</b>White, champagne and roses</span></a>
+   <a href="assets/sbk/sat-dress.jpg" target="_blank" rel="noopener"><img src="assets/sbk/sat-dress.jpg" width="1024" height="1536" loading="lazy" alt="Saturday night dress code poster: bold and confident"><span><b>Sat</b>Bold and confident</span></a>
+   <a href="assets/sbk/sun-dress.jpg" target="_blank" rel="noopener"><img src="assets/sbk/sun-dress.jpg" width="1024" height="1536" loading="lazy" alt="Sunday dress code poster: represent your culture or your sports team"><span><b>Sun</b>Your culture or your sports team</span></a>
+  </div>
+
+  <p class="sched-note rv">Their General Program page points at a live Google Sheet as the source of truth, and it says outright to check that link when in doubt. <a href="https://sfsbkcongress.dance/general-program" target="_blank" rel="noopener">General Program</a></p>
  </div>
 </section>
 
@@ -870,7 +923,7 @@
    <div class="ri"><div class="rd">Fri Oct 30</div><div class="rc"><b>Halloween Night Deluxe</b>Provision 711. Costume contest, classes at 9, social 10 to 2.</div></div>
    <div class="ri"><div class="rd">Thu Nov 13</div><div class="rc"><b>Modern Bachata Fusion Weekend</b>PBD, and it falls between week 11 and week 12. Most likely where the Season 4 routine actually shows.</div></div>
    <div class="ri"><div class="rd">Wed Nov 18</div><div class="rc"><b>Season 4, week 12. The last one.</b>Twelve weeks from Sep 2 lands the final class on the Wednesday night before wheels up. The Jezebel routine peaks, then I sleep, then I fly.<br><br><b class="inl">Which kills the Wednesday option.</b> Flying in Nov 18 for SBK Pre-Party #1 costs me the season finale. Worth knowing before I price the five-night version.</div></div>
-   <div class="ri last"><div class="rd">Thu Nov 19</div><div class="rc"><b>PHX to SFO</b>Shuttle, check in, and the pre-party at 10 PM.</div></div>
+   <div class="ri last"><div class="rd">Thu Nov 19</div><div class="rc"><b>PHX to SFO</b>Shuttle to the hotel. Congress check-in and pre-party doors both open at 9 PM.</div></div>
   </div>
 
   <div class="bar-call rv" style="margin-top:40px">
@@ -904,8 +957,8 @@
 </footer>
 
 <script>
- // countdown to the Thursday official pre-party, 10 PM Pacific
- var target = new Date("2026-11-19T22:00:00-08:00").getTime();
+ // countdown to the Thursday pre-party doors, 9 PM Pacific
+ var target = new Date("2026-11-19T21:00:00-08:00").getTime();
  function tick(){
   var d = Math.max(0, target - Date.now());
   document.getElementById('cd-d').textContent = Math.floor(d/86400000);
