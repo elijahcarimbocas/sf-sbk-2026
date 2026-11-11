@@ -196,7 +196,8 @@
 
  /* schedule */
  #schedule{background:var(--steel)}
- .tl{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line)}
+ .tl{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line)}
+ @media(max-width:1100px){.tl{grid-template-columns:repeat(3,1fr)}}
  @media(max-width:900px){.tl{grid-template-columns:repeat(2,1fr)}}
  @media(max-width:560px){.tl{grid-template-columns:1fr}}
  .day{padding:24px 20px 26px;background:var(--ink);border-top:2px solid var(--line2)}
@@ -211,6 +212,50 @@
  .sched-note{margin-top:28px;font-size:13.5px;color:var(--muted);line-height:1.7}
  .sched-note a{color:var(--orange);border-bottom:1px solid var(--orange)}
  .day .grid-link{display:inline-block;margin-top:14px;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);border-bottom:1px solid var(--orange)}
+ .wk{position:relative}
+ .wk>input{position:absolute;opacity:0;pointer-events:none}
+ .wk-lede{font-size:13.5px;color:var(--muted);line-height:1.7;margin:-6px 0 20px}
+ .wk-tabs{display:flex;gap:26px;border-bottom:1px solid var(--line2);margin-bottom:16px}
+ .wk-tabs label{cursor:pointer;font-family:var(--disp);font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 0 10px;border-bottom:2px solid transparent;margin-bottom:-1px}
+ .wk-tabs label:hover{color:var(--fog)}
+ #wk-fri:checked~.wk-tabs label[for=wk-fri],#wk-sat:checked~.wk-tabs label[for=wk-sat],#wk-sun:checked~.wk-tabs label[for=wk-sun]{color:var(--orange);border-bottom-color:var(--orange)}
+ #wk-fri:focus-visible~.wk-tabs label[for=wk-fri],#wk-sat:focus-visible~.wk-tabs label[for=wk-sat],#wk-sun:focus-visible~.wk-tabs label[for=wk-sun]{outline:2px solid var(--orange);outline-offset:4px}
+ .wk-key{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:11.5px;color:var(--muted);margin-bottom:18px}
+ .wk-key span{display:inline-flex;align-items:center;gap:7px}
+ .sw{display:inline-block;width:12px;height:12px;background:var(--panel);border-left:3px solid var(--k)}
+ .wg{display:none;grid-template-columns:50px repeat(10,minmax(0,1fr));grid-auto-rows:minmax(56px,auto);gap:3px}
+ #wk-fri:checked~.wk-days .wk-fri,#wk-sat:checked~.wk-days .wk-sat,#wk-sun:checked~.wk-days .wk-sun{display:grid}
+ .wg-s{font-family:var(--disp);font-weight:800;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);border-bottom:2px solid var(--orange);padding:0 2px 5px;align-self:end}
+ .wg-r{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);padding:6px 2px 8px;align-self:end;line-height:1.35}
+ .wg-t{font-family:var(--disp);font-weight:700;font-size:14px;color:var(--muted);padding-top:7px;border-top:1px solid var(--line)}
+ .c{--k:transparent;background:var(--panel);border-left:3px solid var(--k);padding:7px 8px 8px;font-size:11px;line-height:1.4;color:var(--muted)}
+ .c b{display:block;color:var(--white);font-weight:600;margin-bottom:2px}
+ .c span{display:block}
+ .c .rm{display:none}
+ .k-L1{--k:#7cc48d}.k-L2{--k:#f0a03c}.k-L3{--k:#d98cb3}.k-Op{--k:#7aa7e6}.k-U{--k:#d9cf7a}.k-mine{--k:var(--orange)}
+ .c.k-mine{background:rgba(226,85,43,.16)}
+ .c.k-mine b{color:var(--white)}
+ .c.k-comp{background:var(--orange);border-left:0;display:flex;flex-direction:column;justify-content:center;text-align:center}
+ .c.k-comp b{font-family:var(--disp);font-weight:800;font-size:19px;text-transform:uppercase;line-height:1;color:var(--ink)}
+ .c.k-comp span{color:var(--ink);font-weight:600}
+ .c.k-soc,.c.k-x,.c.k-reh{background:transparent;border:1px dashed var(--line2)}
+ .c.k-soc b{color:var(--fog)}
+ .c.k-x b{color:var(--muted);font-weight:500}
+ .c.k-reh{border:1px solid var(--amber)}
+ .c.k-reh b{color:var(--amber)}
+ @media(max-width:980px){
+  .wk-tabs{gap:18px}
+  .wk-tabs label{font-size:16px}
+  .wg{grid-template-columns:1fr;grid-auto-rows:auto;gap:4px}
+  .wg>*{grid-area:auto!important}
+  .wg-s,.wg-r,.wg-t.empty{display:none}
+  .wg-t{font-size:17px;color:var(--orange);padding:14px 0 4px;margin-top:6px}
+  .wg-t:first-of-type{margin-top:0}
+  .c{font-size:12.5px;padding:9px 12px 10px}
+  .c .rm{display:block;font-style:normal;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+  .c.k-comp{text-align:left;padding:12px}
+  .c.k-comp .rm{color:var(--ink)}
+ }
  .sch-h{font-family:var(--disp);font-weight:800;font-size:28px;text-transform:uppercase;letter-spacing:.03em;margin:56px 0 18px}
  .comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border-top:2px solid var(--orange)}
  @media(max-width:640px){.comp{grid-template-columns:1fr}}
@@ -590,7 +635,7 @@
    <div>
     <h2>Five days.<br>Two optional.</h2>
    </div>
-   <p>Times come from their latest workshop grids and flyers. They still move, so check the sheet before I fly. Performer rehearsal runs 2 to 6 PM every day.</p>
+   <p>Times come from their latest workshop grids and flyers. They still move, so check the sheet before I fly. Performer rehearsal runs 2 to 6 PM every day, and their grids put it in Grand Ballroom D.</p>
   </div>
   <div class="tl">
    <div class="day rv">
@@ -637,9 +682,9 @@
     </ul>
     <a class="grid-link" href="assets/sbk/sat-grid.jpg" target="_blank" rel="noopener">Saturday grid</a>
    </div>
-   <div class="day rv buffer">
-    <div class="d">SUN &rarr; MON</div>
-    <div class="dt">Nov 22-23</div>
+   <div class="day rv">
+    <div class="d">SUN</div>
+    <div class="dt">Nov 22</div>
     <ul>
      <li>Workshops 10 AM to 6 PM</li>
      <li>Carlitos &amp; Cece, 10 AM<em>Bachata Sensual Partnerwork, Grand Ballroom C</em></li>
@@ -647,11 +692,282 @@
      <li>Afternoon socials, 5 to 8 PM</li>
      <li>Zouk J&amp;J, 7 to 9 PM<em>Regency Ballroom</em></li>
      <li>Closing night<em>Dancing from 11 PM</em></li>
-     <li>Mon: fly home<em>Book the afternoon. Sunday runs to 7 AM and checkout is noon.</em></li>
     </ul>
     <a class="grid-link" href="assets/sbk/sun-grid.jpg" target="_blank" rel="noopener">Sunday grid</a>
    </div>
+   <div class="day rv buffer">
+    <div class="d">MON</div>
+    <div class="dt">Nov 23</div>
+   </div>
   </div>
+
+  <h3 class="sch-h rv">The workshop grid</h3>
+  <p class="wk-lede rv">Every room and every hour from their latest grids. The color on the left edge is the level from their key.</p>
+  <div class="wk rv">
+   <input type="radio" name="wkday" id="wk-fri" checked><input type="radio" name="wkday" id="wk-sat"><input type="radio" name="wkday" id="wk-sun">
+   <div class="wk-tabs"><label for="wk-fri">Fri Nov 20</label><label for="wk-sat">Sat Nov 21</label><label for="wk-sun">Sun Nov 22</label></div>
+   <div class="wk-key"><span><i class="sw k-L1"></i>Level 1, 0-1 yr</span><span><i class="sw k-L2"></i>Level 2, 1-3 yrs</span><span><i class="sw k-L3"></i>Level 3, 4+ yrs</span><span><i class="sw k-Op"></i>Open level</span><span><i class="sw k-U"></i>Color not on their key</span><span><i class="sw k-mine"></i>Carlitos &amp; Cece</span></div>
+   <div class="wk-days">
+<div class="wg wk-fri" role="region" aria-label="Friday workshop grid">
+<div class="wg-s" style="grid-area:1/2/2/5">Salsa</div>
+<div class="wg-s" style="grid-area:1/5/2/6">Salsa &amp; Bachata</div>
+<div class="wg-s" style="grid-area:1/6/2/8">Bachata</div>
+<div class="wg-s" style="grid-area:1/8/2/9">Kizomba</div>
+<div class="wg-s" style="grid-area:1/9/2/12">Zouk</div>
+<div class="wg-r" style="grid-area:2/2/3/3">Grand Ballroom EFG</div>
+<div class="wg-r" style="grid-area:2/3/3/4">Grand Ballroom D</div>
+<div class="wg-r" style="grid-area:2/4/3/5">Grand Ballroom AB</div>
+<div class="wg-r" style="grid-area:2/5/3/6">SandPebbles AB</div>
+<div class="wg-r" style="grid-area:2/6/3/7">Grand Ballroom C</div>
+<div class="wg-r" style="grid-area:2/7/3/8">Regency Ballroom</div>
+<div class="wg-r" style="grid-area:2/8/3/9">Harbour Room</div>
+<div class="wg-r" style="grid-area:2/9/3/10">BaySide</div>
+<div class="wg-r" style="grid-area:2/10/3/11">SandPebble DEF</div>
+<div class="wg-r" style="grid-area:2/11/3/12">PoolSide Pavilion</div>
+<div class="wg-t" style="grid-area:3/1/4/2">11 AM</div>
+<div class="c k-L3" style="grid-area:3/2/4/3"><b>Danny &amp; Lea (N.C. &amp; NY)</b><span>Salsa On2 Partnerwork</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L3" style="grid-area:3/3/4/4"><b>ABC Dance Company (Italy)</b><span>Mambo Fusion</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:3/5/4/6"><b>Bella &amp; Bello (Canada)</b><span>Bachata Partnerwork</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:3/6/4/7"><b>Jas &amp; Haile (Sonoma)</b><span>Bachata European Style</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-Op" style="grid-area:3/7/4/8"><b>Hector &amp; Annaliza (SJ)</b><span>Bachata Partnerwork</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-x" style="grid-area:3/8/7/9"><b>Beginner kizomba and urban kiz intensives</b><span>2 hr kizomba plus 6 hr urban kiz. Open for all, free.</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-x" style="grid-area:3/10/4/11"><b>10 hr beginner zouk intensive</b><span>Zero to Hero in one festival</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:4/1/5/2">12 PM</div>
+<div class="c k-L3" style="grid-area:4/2/5/3"><b>Hanson (S. Korea)</b><span>Body Movement and Afro Fusion</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L3" style="grid-area:4/3/5/4"><b>Jacopo &amp; Linda (Italy)</b><span>Cool Partnerwork Moves</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:4/4/5/5"><b>Jhon &amp; Liz (OAK)</b><span>Partnering Technique, Turn Patterns</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:4/5/5/6"><b>Ali Loo (Hawaii)</b><span>Bachata Aloha Musicality Lab</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:4/6/5/7"><b>Patrick &amp; Johanna (HOU)</b><span>Bachata Sensual Movement</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:4/7/5/8"><b>Gracias: Klui &amp; Dalla (S. Korea)</b><span>Gracias Sensual Bachata Style</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-x" style="grid-area:4/9/9/10"><b>Open</b><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-L1" style="grid-area:4/11/5/12"><b>Aneska (LA)</b><span>Must have beginner zouk combos 1-5, Part 1</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:5/1/6/2">1 PM</div>
+<div class="c k-L3" style="grid-area:5/2/6/3"><b>Benny &amp; Ashley (Portland)</b><span>Social Dancing Flow</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L3" style="grid-area:5/3/6/4"><b>Yuri Colucci &amp; C. Crew (Italy)</b><span>Salsa C. Crew Lab</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:5/4/6/5"><b>Daisy / Brayian (LA / NY)</b><span>Salsa On2 Shines &amp; Partnerwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:5/5/6/6"><b>Marianela Amarante (Bay Area)</b><span>Lady Styling, salsa</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:5/6/6/7"><b>Ngoc &amp; Michael (Bay Area)</b><span>Sensual Fusion Bachata Partnerwork</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:5/7/6/8"><b>Jovanny &amp; Anatasia (Orlando)</b><span>Bachata European Style</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-L1" style="grid-area:5/10/6/11"><b>Alexia Meirelles (SJ)</b><span>Must have beginner zouk combos 5-10, Part 2</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:5/11/6/12"><b>Javi &amp; Carla (Vancouver)</b><span>Lateral / Abertura / Yo-Yo Variations</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:6/1/7/2">2 PM</div>
+<div class="c k-L3" style="grid-area:6/2/7/3"><b>Konstain &amp; Arcadia (Sweden)</b><span>Funky ChaCha</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-reh" style="grid-area:6/3/10/4"><b>Tech rehearsal</b><span>2 to 6 PM</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:6/4/7/5"><b>Carlos &amp; Ekaterian (Dallas / Denver)</b><span>Salsa On2 Shines &amp; Partnerwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:6/5/7/6"><b>Alexander Hernandez (Bay Area)</b><span>Sensual Flow, bachata</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:6/6/7/7"><b>Zoukchata John &amp; Succi (LA)</b><span>Bachata with Zouk Signature Move</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-comp" style="grid-area:6/7/9/8"><b>Zouk Battle</b><span>2 to 5 PM</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-U" style="grid-area:6/10/7/11"><b>Atom C (LA)</b><span>Playing with Waves</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:6/11/7/12"><b>Renato &amp; Tamara (DAL)</b><span>Lambada Roots &amp; Zouk Evolution</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:7/1/8/2">3 PM</div>
+<div class="c k-L3" style="grid-area:7/2/8/3"><b>Empire Mambo (NYC)</b><span>Mambo Footwork, EM style</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:7/4/8/5"><b>Eder Ivan / Erica (LA)</b><span>On2 Partnerwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:7/5/8/6"><b>Mireille Ruiz (Mexico)</b><span>Master Social Dancing Skill</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-mine" style="grid-area:7/6/8/7"><b>Carlitos &amp; Cece (Germany)</b><span>Urban Bachata Social Combo</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L1" style="grid-area:7/8/8/9"><b>Tyler (Sonoma)</b><span>Kizomba must-have Fundamentals, Part 1</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-U" style="grid-area:7/10/8/11"><b>Imaan &amp; Sharon (OAK)</b><span>Back &amp; Forward / Viradinha / Gostosinho</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:7/11/8/12"><b>Leandro &amp; Nayara (Brazil)</b><span>Sarrada after Viradinha</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:8/1/9/2">4 PM</div>
+<div class="c k-L3" style="grid-area:8/2/9/3"><b>Tropical Gem (Italy)</b><span>Tropical Gem Style Footwork</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:8/4/9/5"><b>Joshua &amp; Natali (SF)</b><span>Footwork &amp; Partnerwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:8/5/9/6"><b>Edwin Castellon (DC)</b><span>Social Dance Connection</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:8/6/9/7"><b>Shelby &amp; Ariani (Atlanta)</b><span>Master Social Dancing Skill</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L1" style="grid-area:8/8/9/9"><b>Derrick Wright (DAL)</b><span>Beginner Progressive Intensive, Part 2. Saidas 101</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-U" style="grid-area:8/10/9/11"><b>Bruna Kazakevic (MCO)</b><span>The Art of Comfort and Connection in Zouk</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:8/11/9/12"><b>Bruno &amp; Fae (ORL)</b><span>Desprezada into Advanced Variations</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:9/1/10/2">5 PM</div>
+<div class="c k-L3" style="grid-area:9/2/10/3"><b>Karel Flores (NYC)</b><span>Lady Styling</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-soc" style="grid-area:9/4/12/5"><b>Salsa afternoon social</b><span>5 to 8 PM</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:9/5/10/6"><b>Vanessa &amp; Guillermo (BA)</b><span>Bachata Sensual Flow, Partnerwork</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-soc" style="grid-area:9/6/12/7"><b>Bachata afternoon social</b><span>5 to 8 PM</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-n" style="grid-area:9/7/10/8"><b>Paulo &amp; Luiza (Br / MIA)</b><span>Head Movement Variations</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-Op" style="grid-area:9/8/10/9"><b>Pamelita &amp; Hovsep (DAL / SF)</b><span>Technique Meets Feeling (Open)</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="wg-t" style="grid-area:10/1/11/2">6 PM</div>
+<div class="c k-x" style="grid-area:10/2/11/4"><b>Rooms closed</b><i class="rm">Grand Ballroom EFG and D &middot; Salsa</i></div>
+<div class="c k-soc" style="grid-area:10/7/12/8"><b>Zouk afternoon social</b><span>6 to 8 PM</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-soc" style="grid-area:10/8/11/9"><b>Kizomba / urban kiz practica</b><span>6 to 7 PM</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="wg-t" style="grid-area:11/1/12/2">7 PM</div>
+<div class="c k-x" style="grid-area:11/2/12/4"><b>Shows</b><span>7 PM to midnight, Grand Ballroom DEFG</span><i class="rm">Grand Ballroom EFG and D &middot; Salsa</i></div>
+</div>
+<div class="wg wk-sat" role="region" aria-label="Saturday workshop grid">
+<div class="wg-s" style="grid-area:1/2/2/5">Salsa</div>
+<div class="wg-s" style="grid-area:1/5/2/6">Salsa &amp; Bachata</div>
+<div class="wg-s" style="grid-area:1/6/2/8">Bachata</div>
+<div class="wg-s" style="grid-area:1/8/2/9">Kizomba</div>
+<div class="wg-s" style="grid-area:1/9/2/12">Zouk</div>
+<div class="wg-r" style="grid-area:2/2/3/3">Grand Ballroom EFG</div>
+<div class="wg-r" style="grid-area:2/3/3/4">Grand Ballroom D</div>
+<div class="wg-r" style="grid-area:2/4/3/5">Grand Ballroom AB</div>
+<div class="wg-r" style="grid-area:2/5/3/6">SandPebbles AB</div>
+<div class="wg-r" style="grid-area:2/6/3/7">Grand Ballroom C</div>
+<div class="wg-r" style="grid-area:2/7/3/8">Regency Ballroom</div>
+<div class="wg-r" style="grid-area:2/8/3/9">Harbour Room</div>
+<div class="wg-r" style="grid-area:2/9/3/10">BaySide</div>
+<div class="wg-r" style="grid-area:2/10/3/11">SandPebble DEF</div>
+<div class="wg-r" style="grid-area:2/11/3/12">PoolSide Pavilion</div>
+<div class="wg-t" style="grid-area:3/1/4/2">10 AM</div>
+<div class="c k-L2" style="grid-area:3/2/4/3"><b>Jeio (Korea)</b><span>Afro Fusion Shines</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L2" style="grid-area:3/3/4/4"><b>Iroko (Tampa)</b><span>Footwork &amp; Body Movement</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:3/5/4/6"><b>Shelby &amp; Ariani (Atlanta)</b><span>Master Social Dancing Skill, bachata</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:3/6/4/7"><b>Johnathan &amp; Jeniffer (SA)</b><span>Esta Noche Footwork &amp; Partnerwork</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:3/7/4/8"><b>Mike &amp; Erica (LA)</b><span>Urban Bachata (FT &amp; Partnerwork)</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-x" style="grid-area:3/9/5/10"><b>10 hr beginner zouk intensive</b><span>Zero to Hero in one festival. Open for all, free.</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:4/1/5/2">11 AM</div>
+<div class="c k-L2" style="grid-area:4/2/5/3"><b>Amneris Martinez (NYC)</b><span>Body Movement</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L3" style="grid-area:4/3/5/4"><b>G-Ya (Korea)</b><span>Mambo Shines</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:4/4/5/5"><b>Lawrence &amp; Jewel (PHX)</b><span>Afro Fusion Shines</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:4/5/5/6"><b>Mariah &amp; Andrea (LA / Reno)</b><span>Bachata Flow (FT &amp; Partnerwork)</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:4/6/5/7"><b>William &amp; Eden (LA)</b><span>Innovative bachata combo with style</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:4/7/5/8"><b>Demetrio &amp; Danila (Italy)</b><span>Bachata Footwork &amp; Partnerwork</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="wg-t" style="grid-area:5/1/6/2">12 PM</div>
+<div class="c k-L3" style="grid-area:5/2/6/3"><b>Diego &amp; Yaritza (NYC)</b><span>Palladium Mambo Shines</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:5/3/6/4"><b>Hanson &amp; Hwara (Korea)</b><span>Salsa Footwork &amp; Combo</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:5/4/6/5"><b>Amelia Munoz (Los Angeles)</b><span>Lady Styling</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-L2" style="grid-area:5/5/6/6"><b>David Princess / Jayven (LA)</b><span>Footwork / Partnerwork On2</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:5/6/6/7"><b>Gracias: Klui &amp; Dalla (S. Korea)</b><span>Gracias Sensual Bachata Style</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:5/7/6/8"><b>Bryon &amp; Sammantha (SF)</b><span>Bachata Flow (FT &amp; Partnerwork)</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-n" style="grid-area:5/10/6/11"><b>Richele Marie (SD)</b><span>Must-have combos for new zouk dancers</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:5/11/6/12"><b>Alain &amp; Elijah (WI)</b><span>Intro to Head Movement &amp; Piao (open level)</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:6/1/7/2">1 PM</div>
+<div class="c k-L2" style="grid-area:6/2/7/3"><b>Yolieth Baranggan (Texas)</b><span>Salsa Fusion</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L3" style="grid-area:6/3/7/4"><b>Inwoo (S. Korea)</b><span>Mambo Footwork</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:6/4/7/5"><b>Ilias / Sophia (Greece / Morocco)</b><span>Social Dancing Skill</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:6/5/7/6"><b>Joel / Lucia, Motion On2 (LA)</b><span>Bachata Moderna Footwork</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:6/6/7/7"><b>Jovanny &amp; Anatasia (Orlando)</b><span>Bachata Sensual, Sensual Movement</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:6/7/7/8"><b>Fausto &amp; The Kingsmen (NYC / DAL)</b><span>Bachata Lead &amp; Follow Techniques</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-L1" style="grid-area:6/8/7/9"><b>Tyler Crandall (Sonoma)</b><span>Kizomba must-have figures for social, Part 2</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:6/9/7/10"><b>Cosan &amp; Helen (SF)</b><span>Beginner Intensive Series: Body Isolation / Counterbalance</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:6/10/7/11"><b>Bruno &amp; Fae (ORL)</b><span>Intro to Toalha, Part 1</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:6/11/7/12"><b>Evelyn &amp; Derrick (SF)</b><span>Circular Patterns &amp; Space Navigation</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:7/1/8/2">2 PM</div>
+<div class="c k-L3" style="grid-area:7/2/8/3"><b>Jacopo &amp; Linda (Italy)</b><span>Mambo with Afro Shines</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-reh" style="grid-area:7/3/11/4"><b>Tech rehearsal</b><span>2 to 6 PM</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:7/4/8/5"><b>Bryant &amp; Anita (PDX)</b><span>Salsa Romantica Style</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:7/5/8/6"><b>Ashwin &amp; Kristen (ATL)</b><span>Bachata Fusion</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:7/6/8/7"><b>Roxy Vega (Mexico)</b><span>Fun Bachata Choreo</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-comp" style="grid-area:7/7/10/8"><b>Salsanama Solo</b><span>2 to 5 PM</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-L1" style="grid-area:7/8/8/9"><b>Kizomba intensive</b><span>Teacher&#x27;s name is covered on their screenshot</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:7/9/8/10"><b>Aneska (LA)</b><span>Beginner Intensive Series: Soltinho / Variations</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:7/10/8/11"><b>Evelyn &amp; Derrick (SF)</b><span>Make It Flow in Zouk</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:7/11/8/12"><b>Paulo &amp; Luiza (Br / MIA)</b><span>Head Movement Mechanics for Comfort</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:8/1/9/2">3 PM</div>
+<div class="c k-L3" style="grid-area:8/2/9/3"><b>Bozzy Brother (Italy)</b><span>Salsa Explosion</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:8/4/9/5"><b>Eder Ivan / Erica Reyna (LA)</b><span>On2 LA Style (FT &amp; Partnerwork)</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:8/5/9/6"><b>Eric / Yolieth (Mexico)</b><span>Partnering Technique</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:8/6/9/7"><b>Jahaira &amp; Angelica (OAK)</b><span>Killer Bachata Footwork</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:8/8/9/9"><b>Derrick Wright (DAL)</b><span>Beginner Progressive Intensive, Pivots and Turns</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:8/9/9/10"><b>Renato &amp; Tamara (DAL)</b><span>Beginner Intensive Series: Gostosinho Variations</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:8/10/9/11"><b>Nelly Caldeira (SF)</b><span>Special Topic</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:8/11/9/12"><b>Bruno &amp; Fae (ORL)</b><span>Toalha Variations, Part 2</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:9/1/10/2">4 PM</div>
+<div class="c k-L2" style="grid-area:9/2/10/3"><b>Karel Flores (NYC)</b><span>Mambo Fusion</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:9/4/10/5"><b>Carlos &amp; Gabriela (Dallas / Denver)</b><span>Salsa On2, Partnerwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:9/5/10/6"><b>Lucy / David (Seattle)</b><span>Bachata Connection &amp; Flair</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:9/6/10/7"><b>Javier &amp; Kiki (LA)</b><span>Traditional Fusion</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:9/8/11/9"><b>Pamelita &amp; Hovsep (DAL / SF)</b><span>Arm Positioning Creativity. 2 hr special intensive</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:9/9/10/10"><b>Gabriel De CB (WI)</b><span>Beginner Intensive Series: Bonus / Boomerang</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:9/10/10/11"><b>Bruna Kazakevic (MCO)</b><span>Body Isolation &amp; Fluid Movement</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:9/11/10/12"><b>Leandro &amp; Nayara (Brazil)</b><span>Spin Techniques</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:10/1/11/2">5 PM</div>
+<div class="c k-Op" style="grid-area:10/2/11/3"><b>Cristian Vergari (Italy)</b><span>Mambo Fusion &amp; Body Movement</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-soc" style="grid-area:10/4/13/5"><b>Salsa afternoon social</b><span>5 to 8 PM</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:10/5/11/6"><b>Jewel Huges (Phoenix)</b><span>Lady Styling, salsa</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-soc" style="grid-area:10/6/13/7"><b>Bachata afternoon social</b><span>5 to 8 PM</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-soc" style="grid-area:10/7/12/8"><b>Zouk afternoon social</b><span>5 to 7 PM</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="wg-t" style="grid-area:11/1/12/2">6 PM</div>
+<div class="c k-x" style="grid-area:11/2/12/4"><b>Rooms closed</b><i class="rm">Grand Ballroom EFG and D &middot; Salsa</i></div>
+<div class="c k-soc" style="grid-area:11/8/12/9"><b>Kizomba / urban kiz social</b><span>From 6 PM</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="wg-t empty" style="grid-area:12/1/13/2">7 PM</div>
+</div>
+<div class="wg wk-sun" role="region" aria-label="Sunday workshop grid">
+<div class="wg-s" style="grid-area:1/2/2/5">Salsa</div>
+<div class="wg-s" style="grid-area:1/5/2/6">Salsa &amp; Bachata</div>
+<div class="wg-s" style="grid-area:1/6/2/8">Bachata</div>
+<div class="wg-s" style="grid-area:1/8/2/9">Kizomba</div>
+<div class="wg-s" style="grid-area:1/9/2/12">Zouk</div>
+<div class="wg-r" style="grid-area:2/2/3/3">Grand Ballroom EFG</div>
+<div class="wg-r" style="grid-area:2/3/3/4">Grand Ballroom D</div>
+<div class="wg-r" style="grid-area:2/4/3/5">Grand Ballroom AB</div>
+<div class="wg-r" style="grid-area:2/5/3/6">SandPebbles AB</div>
+<div class="wg-r" style="grid-area:2/6/3/7">Grand Ballroom C</div>
+<div class="wg-r" style="grid-area:2/7/3/8">Regency Ballroom</div>
+<div class="wg-r" style="grid-area:2/8/3/9">Harbour Room</div>
+<div class="wg-r" style="grid-area:2/9/3/10">BaySide</div>
+<div class="wg-r" style="grid-area:2/10/3/11">SandPebble DEF</div>
+<div class="wg-r" style="grid-area:2/11/3/12">PoolSide Pavilion</div>
+<div class="wg-t" style="grid-area:3/1/4/2">10 AM</div>
+<div class="c k-L2" style="grid-area:3/2/4/3"><b>Melisa Katilmis (Turkey)</b><span>Lady Styling</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-U" style="grid-area:3/3/4/4"><b>Adolfo &amp; EM (New York)</b><span>EM Mambo Style</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:3/4/4/5"><b>James &amp; Armando (PDX / N. Carolina)</b><span>Mambo Footwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-mine" style="grid-area:3/6/4/7"><b>Carlitos &amp; Cece (Germany)</b><span>Bachata Sensual Partnerwork</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:3/7/4/8"><b>Roxy Vega (MEX)</b><span>Bachata Shine &amp; Styling</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-x" style="grid-area:3/9/5/10"><b>13 hr beginner zouk intensive</b><span>Zero to Hero in one festival</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:4/1/5/2">11 AM</div>
+<div class="c k-L3" style="grid-area:4/2/5/3"><b>G-Ya (Korea)</b><span>Boogaloo with Disco</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L3" style="grid-area:4/3/5/4"><b>Mambo Aloyala (Portland)</b><span>Mambo Aloyala</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:4/4/5/5"><b>Oscar Canstaneda (SAC)</b><span>Mambo Footwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:4/5/5/6"><b>Cassandra Villasebnor (BA)</b><span>Traditional Bachata Partnerwork</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:4/6/5/7"><b>Mike &amp; Erica (LA)</b><span>Urban Bachata Love Combo</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:4/7/5/8"><b>Fauston &amp; The Kingsmen (NYC)</b><span>Bachata Body Movement &amp; Connection</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="wg-t" style="grid-area:5/1/6/2">12 PM</div>
+<div class="c k-L2" style="grid-area:5/2/6/3"><b>Arcadia &amp; Konstatin (Sweden)</b><span>Salsa Partnerwork</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-U" style="grid-area:5/3/6/4"><b>Tropical Gem (Italy)</b><span>Tropical Gem Partnerwork</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:5/4/6/5"><b>Jeio (Korea)</b><span>Afro Fusion Shines</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:5/5/6/6"><b>Esteban &amp; Partner (Bay Area)</b><span>Bachata Sensual Connection</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:5/6/6/7"><b>Jonathan &amp; Jennifer (SA)</b><span>Dominican Swag (FT &amp; Partnerwork)</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-L2" style="grid-area:5/7/6/8"><b>Demetrio &amp; Danila (Italy)</b><span>Bachata Sensual</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-n" style="grid-area:5/11/6/12"><b>Leandro &amp; Nayara (Brazil / MCO)</b><span>The Foundation of Head Movement</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:6/1/7/2">1 PM</div>
+<div class="c k-L2" style="grid-area:6/2/7/3"><b>Amneris Martinez (NYC)</b><span>Mambo Fusion</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-L3" style="grid-area:6/3/7/4"><b>Diego &amp; Yaritza (NYC)</b><span>NY Mambo Partnerwork</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:6/4/7/5"><b>Ameilia Munoz (LA)</b><span>Shines</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:6/5/7/6"><b>Arthur &amp; Xiu (OC)</b><span>Rueda de Casino Exploration</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-Op" style="grid-area:6/6/7/7"><b>Johanna Pellerin (France)</b><span>Bachata Lady Styling</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-Op" style="grid-area:6/7/7/8"><b>Bryon &amp; Sammantha (SF)</b><span>InEssence Bachata FT</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-L1" style="grid-area:6/8/7/9"><b>Tyler Crandall (Sonoma)</b><span>Kizomba must-have combined…</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:6/9/7/10"><b>Renato &amp; Tamara (DAL)</b><span>5 Essential Foundations for…</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:6/10/7/11"><b>Evelyn &amp; Derrick (SF)</b><span>Earth, Wind, Ocean and Fire</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:6/11/7/12"><b>Nelly Caldeira (SF)</b><span>Deep Dive: Soltinho &amp; Viradinha</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:7/1/8/2">2 PM</div>
+<div class="c k-L2" style="grid-area:7/2/8/3"><b>Bozzy Academy (Italy)</b><span>Bozzy Style Footwork / Partnerwork</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-reh" style="grid-area:7/3/11/4"><b>Tech rehearsal</b><span>2 to 6 PM</span><i class="rm">Grand Ballroom D &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:7/4/8/5"><b>Daniel &amp; Kathryn (DEN)</b><span>Denver New Style Shine &amp; Partnerwork On2</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:7/5/8/6"><b>Marisa Craig (SF)</b><span>Salsa Freedom in Social Dancing</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-comp" style="grid-area:7/7/10/8"><b>Bachata Ultimate Showdown</b><span>2 to 5 PM</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="c k-L1" style="grid-area:7/8/8/9"><b>Derrick Wright (DAL)</b><span>Beginner Progressive Intensive</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:7/9/8/10"><b>Tony &amp; Helen (SF)</b><span>5 More Essential Foundations for…</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:7/10/8/11"><b>Gabriel De CB (WI)</b><span>Dynamics in Zouk</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:7/11/8/12"><b>Bruno &amp; Fae (ORL)</b><span>Deep Dive: Tilts Variations</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:8/1/9/2">3 PM</div>
+<div class="c k-L3" style="grid-area:8/2/9/3"><b>ABC Dance Company (Italy)</b><span>Mambo Fusion</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:8/4/9/5"><b>Deymian / Angie (Portland / NY)</b><span>Mambo Footwork / Partnerwork</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:8/5/9/6"><b>Nav &amp; Katherine (Sacramento)</b><span>Cool Combo Partnerwork</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:8/8/9/9"><b>Pamelita &amp; Hovsep (DAL / SF)</b><span>Pivots within Unique Frames</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:8/9/9/10"><b>Alain &amp; Elijah (WI)</b><span>Hammerlock Variations</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:8/10/9/11"><b>Brad Meccia (Hawaii)</b><span>Intro to NeoZouk</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:8/11/9/12"><b>Paulo &amp; Luiza (Br / MIA)</b><span>Deep Dive: Embracing Elasticity</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:9/1/10/2">4 PM</div>
+<div class="c k-L3" style="grid-area:9/2/10/3"><b>Iroko (Tampa)</b><span>Footwork / Partnerwork</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:9/4/10/5"><b>Milton Martinez (LA)</b><span>Salsa On2 Shines</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:9/5/10/6"><b>Rico Paris (New Orleans)</b><span>Partnerwork On2</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-L2" style="grid-area:9/8/10/9"><b>Beto &amp; Sade (MEX / US)</b><span>Add Flair to Your Kizomba</span><i class="rm">Harbour Room &middot; Kizomba</i></div>
+<div class="c k-L1" style="grid-area:9/9/10/10"><b>Gabriel De CB (WI)</b><span>Express More with What You Have</span><i class="rm">BaySide &middot; Zouk</i></div>
+<div class="c k-U" style="grid-area:9/10/10/11"><b>Javi &amp; Carla (Vancouver)</b><span>Traveling w/ Close Embrace</span><i class="rm">SandPebble DEF &middot; Zouk</i></div>
+<div class="c k-L3" style="grid-area:9/11/10/12"><b>Leandro &amp; Nayara (Brazil)</b><span>Deep Dive: Off-Axis Turns</span><i class="rm">PoolSide Pavilion &middot; Zouk</i></div>
+<div class="wg-t" style="grid-area:10/1/11/2">5 PM</div>
+<div class="c k-L3" style="grid-area:10/2/11/3"><b>Yuri Colucci &amp; C Crew (Italy)</b><span>Footwork &amp; Partnerwork</span><i class="rm">Grand Ballroom EFG &middot; Salsa</i></div>
+<div class="c k-soc" style="grid-area:10/4/13/5"><b>Salsa afternoon social</b><span>5 to 8 PM</span><i class="rm">Grand Ballroom AB &middot; Salsa</i></div>
+<div class="c k-Op" style="grid-area:10/5/11/6"><b>Alana Puerto &amp; Misa (Bay Area &amp; Utah)</b><span>Bachata Sensual</span><i class="rm">SandPebbles AB &middot; Salsa &amp; Bachata</i></div>
+<div class="c k-soc" style="grid-area:10/6/13/7"><b>Bachata afternoon social</b><span>5 to 8 PM</span><i class="rm">Grand Ballroom C &middot; Bachata</i></div>
+<div class="c k-soc" style="grid-area:10/7/12/8"><b>Zouk afternoon social</b><span>5 to 7 PM</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+<div class="wg-t" style="grid-area:11/1/12/2">6 PM</div>
+<div class="c k-x" style="grid-area:11/2/12/4"><b>Getting ready for performances</b><i class="rm">Grand Ballroom EFG and D &middot; Salsa</i></div>
+<div class="wg-t" style="grid-area:12/1/13/2">7 PM</div>
+<div class="c k-comp" style="grid-area:12/7/13/8"><b>Zouk BZDC J&amp;J</b><span>7 to 9 PM</span><i class="rm">Regency Ballroom &middot; Bachata</i></div>
+</div>
+   </div>
+  </div>
+  <p class="sched-note rv">Some of their cells cut off mid-sentence, so a few titles end early. On Saturday someone's cursor covers the 2 PM kizomba teacher. The original images are under each day above.</p>
 
   <h3 class="sch-h rv">Three competitions, 2 to 5 PM</h3>
   <div class="comp rv">
@@ -777,9 +1093,9 @@
    <p class="fix-lead">Cece said it outright after reading the brief: every single thing I had a problem with was a timing problem. Fourteen corrections came out of four privates and they all reduce to <b>when</b> something happens, or in what order.</p>
 
    <div class="tally">
-    <div class="ty done"><b>9</b><span>Implemented</span></div>
-    <div class="ty work"><b>3</b><span>Getting there</span></div>
-    <div class="ty still"><b>2</b><span>Still open</span></div>
+    <div class="ty done"><b>13</b><span>Implemented</span></div>
+    <div class="ty work"><b>1</b><span>Getting there</span></div>
+    <div class="ty still"><b>0</b><span>Still open</span></div>
    </div>
 
    <div class="fixgrp">Footwork and weight</div>
@@ -795,7 +1111,7 @@
      <div class="now"><span>Now</span>Push off the <b>right leg</b>. The push is what lets the hips carry the movement instead of the legs just relocating me. Hips go <b>right on 1, left on 5</b>.</div>
     </div>
     <div class="fix">
-     <div class="fix-k">Emphasis on 1 and 5 <i class="st work">Getting there</i></div>
+     <div class="fix-k">Emphasis on 1 and 5 <i class="st done">Implemented</i></div>
      <div class="was"><span>Was</span>Hitting 1 and 5 the same weight as everything else, so a follow gets no landmark.</div>
      <div class="now"><span>Now</span>Carlitos flagged it: <b>emphasize the 1 and the 5</b> with a follow. Not louder footwork, more visible weight arriving. Those are the two counts she reorients off, and they are the same two counts the hips already turn on, right on 1 and left on 5.</div>
     </div>
@@ -826,9 +1142,9 @@
      <div class="why"><span>Saturday Sep 12, and I could hear it</span>A well-known AZ bachata teacher ran this at a social and called the count wrong. Open-close slide on the left foot across <b>1&amp;2</b>, then he labeled the next part <b>3&amp;4</b> when it was <b>3, 4</b>. Two weight changes, not three, so the ampersand promised a syncopation that was never there. He finished it with a body wave in open position, where there is no frame to send it through. Worth logging because six months ago I would have copied it. Now the wrong count is the first thing I notice.</div>
     </div>
     <div class="fix">
-     <div class="fix-k">The two-finger grip <i class="st still">Still open</i></div>
+     <div class="fix-k">The two-finger grip <i class="st work">Getting there</i></div>
      <div class="was"><span>Was</span>Breaking the middle and ring finger spiderman grip while initiating a simple follow left turn on <b>count 5</b>, leaving her nothing to hold.</div>
-     <div class="now"><span>Now</span>Hold it through the turn. She cannot follow a connection that disappears at the moment she needs it. <b>Not yet automatic.</b> One of two things left.</div>
+     <div class="now"><span>Now</span>Hold it through the turn. She cannot follow a connection that disappears at the moment she needs it. <b>Not always perfect yet.</b> The last thing on the list.</div>
     </div>
    </div>
 
@@ -840,23 +1156,23 @@
      <div class="now"><span>Now</span>Holds. Cece called it out in the first private, and I have been drilling it since.</div>
     </div>
     <div class="fix">
-     <div class="fix-k">Shoulders <i class="st work">Getting there</i></div>
+     <div class="fix-k">Shoulders <i class="st done">Implemented</i></div>
      <div class="was"><span>Was</span>Shoulders drifting, so the basic wandered off its line.</div>
-     <div class="now"><span>Now</span>Shoulders <b>straight and centered</b>, which is what keeps the basic travelling in a line with a follow on it. Close, not clean yet, and it needs attention while leading specifically.</div>
+     <div class="now"><span>Now</span>Shoulders <b>straight and centered</b>, which is what keeps the basic travelling in a line with a follow on it.</div>
     </div>
     <div class="fix">
-     <div class="fix-k">Breaking the 1-8 <i class="st still">Still open</i></div>
+     <div class="fix-k">Breaking the 1-8 <i class="st done">Implemented</i></div>
      <div class="was"><span>Was</span>Losing the direction after anything that interrupts a full 1-8.</div>
-     <div class="now"><span>Now</span>After a half basic on 5-8, or an infinity in half-open for four counts, <b>keep going in the 5-8 direction</b>, to the right. <b>Still slips when I skip half a measure.</b> The other of the two.</div>
+     <div class="now"><span>Now</span>After a half basic on 5-8, or an infinity in half-open for four counts, <b>keep going in the 5-8 direction</b>, to the right. For the direction, the timing is what matters. If I get off center anyway, I <b>step-tap, step-tap</b>, or in half-open I move her frame back and forth, up and down, for a <b>full 4 count</b> to get back on track.</div>
     </div>
    </div>
 
    <div class="fixgrp">Sensual</div>
    <div class="fixes">
     <div class="fix">
-     <div class="fix-k">Sensual timing <i class="st work">Getting there</i></div>
+     <div class="fix-k">Sensual timing <i class="st done">Implemented</i></div>
      <div class="was"><span>Was</span>Rushing sensual moves into 4 counts.</div>
-     <div class="now"><span>Now</span>Taking the full <b>8 counts</b>, which fixed the rushing. It also created a new problem: the follow reads 4, commits to an exit, and <b>pulls back on me around 4</b>. So I am mid-move with her weight already leaving.</div>
+     <div class="now"><span>Now</span>Taking the full <b>8 counts</b>, which fixed the rushing. It also created a new problem at first: the follow read 4, committed to an exit, and <b>pulled back on me around 4</b>. So I was mid-move with her weight already leaving.</div>
      <div class="why"><span>What that pull-back is telling me</span>She is not guessing. She is answering the last thing I sent her, and the last thing I sent her was at 4. A prep says something is starting. It does not say how long. If my connection goes neutral after count 4 she has no reason to think the move is still running, so she recovers, which is the correct thing for a good follow to do. Two halves to this: prep the <b>length</b>, not just the direction, and keep sending through <b>5 to 8</b> instead of going quiet once the move is underway.</div>
     </div>
     <div class="fix">
@@ -903,17 +1219,17 @@
    </div>
 
    <div class="bar-call" style="margin-top:26px">
-    <p><b>Five open, and three of them are one problem.</b> The grip breaks at count 5. The follow pulls back around 4 because nothing tells her the move is still running. The 1-8 direction slips when I cut a measure short. All three are my lead going quiet in the back half of the measure, which is what Cece and Leela each said separately in different words: more contact, on a count. The front half of my dancing is fine. The second half is where I stop talking.</p>
+    <p><b>Thirteen of fourteen are in my dancing now. The grip is the one left.</b> It holds most turns, not every one. When it breaks at count 5, she has nothing to hold right when she needs it. Same note Cece and Leela each gave me separately: more contact, on a count.</p>
    </div>
   </div>
 
 
   <h3 class="arc-sub rv">Between here and Burlingame</h3>
   <div class="rail rv">
-   <div class="ri go"><div class="rd">Sat Sep 19 &middot; going</div><div class="rc"><b>Certification Level 1 with Antoni &amp; Belen</b>1 to 6 PM at PBD. Traditional, fusion and urban with bachata world champions. I already hold Level 1, so the retake is <b class="inl">free</b>. Five hours of world-champion instruction for nothing is the best rate on this calendar. Overrides the usual Saturday 1 PM block.</div></div>
+   <div class="ri go"><div class="rd">Sat Sep 19 &middot; going</div><div class="rc"><b>Certification Level 1</b>1 to 6 PM at PBD. Traditional, fusion and urban. I already hold Level 1, so the retake is <b class="inl">free</b>. Five hours of instruction for nothing is the best rate on this calendar. Overrides the usual Saturday 1 PM block.</div></div>
    <div class="ri"><div class="rd">Fri Sep 18</div><div class="rc"><b>Phoenix Bachata &amp; Salsa Night Deluxe</b>Provision 711. Guest DJ Basico out of San Diego. Lawrence &amp; Jewel teaching salsa 9 to 10, social 10 PM to 2 AM. They are also on the SBK lineup in November.</div></div>
    <div class="ri"><div class="rd">Sat Sep 19</div><div class="rc"><b>Que Chimba Latin Night</b>Dink &amp; Dine Pickle Park, Mesa. Adrian &amp; Indira teaching at 9, dancing 10 to 2. $10, 21+.</div></div>
-   <div class="ri"><div class="rd">Sat Oct 17</div><div class="rc"><b>Certification Level 2 with Antoni &amp; Belen</b>1 to 6 PM. Urban bachata, sensual, bachazouk. New level, so this one costs. Closest thing to an SBK workshop block without flying anywhere, and it lands five weeks out.</div></div>
+   <div class="ri"><div class="rd">Sat Oct 17</div><div class="rc"><b>Certification Level 2</b>1 to 6 PM. Urban bachata, sensual, bachazouk. New level, so this one costs. Closest thing to an SBK workshop block without flying anywhere, and it lands five weeks out.</div></div>
    <div class="ri"><div class="rd">Fri Oct 30</div><div class="rc"><b>Halloween Night Deluxe</b>Provision 711. Costume contest, classes at 9, social 10 to 2.</div></div>
    <div class="ri"><div class="rd">Thu Nov 13</div><div class="rc"><b>Modern Bachata Fusion Weekend</b>PBD, and it falls between week 11 and week 12. Most likely where the Season 4 routine actually shows.</div></div>
    <div class="ri"><div class="rd">Wed Nov 18</div><div class="rc"><b>Season 4, week 12. The last one.</b>Twelve weeks from Sep 2 lands the final class on the Wednesday night before wheels up. The Jezebel routine peaks, then I sleep, then I fly.<br><br><b class="inl">Which kills the Wednesday option.</b> Flying in Nov 18 for SBK Pre-Party #1 costs me the season finale. Worth knowing before I price the five-night version.</div></div>
